@@ -1183,7 +1183,7 @@ export class MarkdownParser {
         const createCell = (text: string, isHeader: boolean): LexicalTableCell => ({
             type: 'tablecell',
             version: 1,
-            headerState: isHeader ? 'header' : 'normal',
+            headerState: isHeader ? 1 : 0,
             width: 188, // Default width
             children: [
                 {
