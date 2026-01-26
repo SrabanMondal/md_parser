@@ -1,0 +1,88 @@
+{
+  "id": "Q-CLASS-001",
+  "questionId": "",
+  "selectedQuestionType": "classification",
+  "questionStem": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"heading\",\"tag\":\"h1\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Classify the animals\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Match the animals to their class (Mammal or Bird).\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}",
+  "_status": "draft",
+  "createdAt": "2026-01-24T18:21:29.142Z",
+  "updatedAt": "2026-01-24T18:21:29.142Z",
+  "mcqQuestion": {
+    "optionOrientation": "vertical",
+    "selectedMcqType": "default",
+    "options": []
+  },
+  "fitgQuestion": {
+    "selectFitgqType": "default",
+    "selectDnDPosition": "vertical",
+    "dropableTexts": []
+  },
+  "dndQuestion": {
+    "questionImage": null,
+    "dropableZones": [],
+    "selObjType": "text",
+    "dropObjects": [],
+    "assignDropableZones": [],
+    "positionDropableObjects": []
+  },
+  "classificationQuestion": {
+    "selectedClassificationType": "default",
+    "columnCount": 2,
+    "rowCount": 1,
+    "columnNames": [],
+    "rowNames": [],
+    "matrixCells": [],
+    "possibleResponses": [],
+    "correctAnswers": [],
+    "duplicateResponses": false,
+    "matchDS": {
+      "stimulusList": [
+        {
+          "_id": "1",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Eagle\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}"
+        },
+        {
+          "_id": "2",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Tiger\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}"
+        },
+        {
+          "_id": "3",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Penguin\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}"
+        },
+        {
+          "_id": "4",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Lion\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}"
+        }
+      ],
+      "possibleResponses": [
+        {
+          "_id": "1",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Mammal\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}"
+        },
+        {
+          "_id": "2",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Bird\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}"
+        }
+      ],
+      "optionMapping": {
+        "1": "2",
+        "2": "1",
+        "3": "2",
+        "4": "1"
+      },
+      "duplicateResponses": false
+    }
+  },
+  "tokenHighlight": {
+    "templateText": {
+      "value": "",
+      "json": ""
+    },
+    "tokenType": "word",
+    "answers": []
+  },
+  "hasStepByStepSolution": false,
+  "solution": null,
+  "hasHint": false,
+  "hint": null,
+  "tags": []
+}

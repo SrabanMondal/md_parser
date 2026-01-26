@@ -1,0 +1,190 @@
+{
+  "id": "Q-MCQ-001",
+  "questionId": "",
+  "selectedQuestionType": "MCQ",
+  "questionStem": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"heading\",\"tag\":\"h1\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"What is the capital of France?\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Select the correct option from the list below.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}",
+  "_status": "draft",
+  "createdAt": "2026-01-24T18:21:29.157Z",
+  "updatedAt": "2026-01-24T18:21:29.157Z",
+  "mcqQuestion": {
+    "optionOrientation": "vertical",
+    "selectedMcqType": "default",
+    "options": [
+      {
+        "id": "op1",
+        "option": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Paris",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "format": "",
+                "indent": 0,
+                "direction": null,
+                "textFormat": 0,
+                "textStyle": ""
+              }
+            ]
+          }
+        },
+        "isCorrectAnswer": true,
+        "_id": "1"
+      },
+      {
+        "id": "op2",
+        "option": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "London",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "format": "",
+                "indent": 0,
+                "direction": null,
+                "textFormat": 0,
+                "textStyle": ""
+              }
+            ]
+          }
+        },
+        "isCorrectAnswer": false,
+        "_id": "2"
+      },
+      {
+        "id": "op3",
+        "option": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Berlin",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "format": "",
+                "indent": 0,
+                "direction": null,
+                "textFormat": 0,
+                "textStyle": ""
+              }
+            ]
+          }
+        },
+        "isCorrectAnswer": false,
+        "_id": "3"
+      },
+      {
+        "id": "op4",
+        "option": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Madrid",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "format": "",
+                "indent": 0,
+                "direction": null,
+                "textFormat": 0,
+                "textStyle": ""
+              }
+            ]
+          }
+        },
+        "isCorrectAnswer": false,
+        "_id": "4"
+      }
+    ]
+  },
+  "fitgQuestion": {
+    "selectFitgqType": "default",
+    "selectDnDPosition": "vertical",
+    "dropableTexts": []
+  },
+  "dndQuestion": {
+    "questionImage": null,
+    "dropableZones": [],
+    "selObjType": "text",
+    "dropObjects": [],
+    "assignDropableZones": [],
+    "positionDropableObjects": []
+  },
+  "classificationQuestion": {
+    "selectedClassificationType": "default",
+    "columnCount": 1,
+    "rowCount": 1,
+    "columnNames": [],
+    "rowNames": [],
+    "matrixCells": [],
+    "possibleResponses": [],
+    "correctAnswers": [],
+    "duplicateResponses": false,
+    "matchDS": {
+      "stimulusList": [],
+      "possibleResponses": [],
+      "optionMapping": {},
+      "duplicateResponses": false
+    }
+  },
+  "tokenHighlight": {
+    "templateText": {
+      "value": "",
+      "json": ""
+    },
+    "tokenType": "word",
+    "answers": []
+  },
+  "hasStepByStepSolution": false,
+  "solution": null,
+  "hasHint": false,
+  "hint": null,
+  "tags": []
+}

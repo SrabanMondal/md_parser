@@ -1,0 +1,211 @@
+{
+  "id": 50,
+  "questionId": "Sample-FIB-2",
+  "selectedQuestionType": "fill_in_the_gap",
+  "questionStem": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This is a Classification Question . Below this line the Question stem is in 2 column Layout\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"columns\",\"version\":1,\"columns\":2,\"columnWidths\":[\"70%\",\"30%\"],\"children\":[{\"type\":\"column\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This is the part of the Question Stem in the Left column which has \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"equation\",\"version\":1,\"equation\":\"70\",\"inline\":true},{\"type\":\"text\",\"version\":1,\"text\":\" % width. \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"equation\",\"version\":1,\"equation\":\"70\",\"inline\":true},{\"type\":\"text\",\"version\":1,\"text\":\" is written in Latex. All numbers, formulas, units, expression, math will all be written in Latex with proper formatting like Fraction \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"equation\",\"version\":1,\"equation\":\"\\\\frac{a}{b}\",\"inline\":true},{\"type\":\"text\",\"version\":1,\"text\":\" is incorrect while \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"equation\",\"version\":1,\"equation\":\"\\\\dfrac{a}{b}\",\"inline\":true},{\"type\":\"text\",\"version\":1,\"text\":\" is correct.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"text\",\"version\":1,\"text\":\"This entire sentence is in bold\",\"format\":1,\"detail\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This entire sentence is in bold and italics\",\"format\":3,\"detail\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"text\",\"version\":1,\"text\":\"This is a table with 2 rows and 3 columns:\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"table\",\"version\":1,\"children\":[{\"type\":\"tablerow\",\"version\":1,\"children\":[{\"type\":\"tablecell\",\"version\":1,\"headerState\":3,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R1C1\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]},{\"type\":\"tablecell\",\"version\":1,\"headerState\":1,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R1C2\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]},{\"type\":\"tablecell\",\"version\":1,\"headerState\":1,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R1C3\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]}]},{\"type\":\"tablerow\",\"version\":1,\"children\":[{\"type\":\"tablecell\",\"version\":1,\"headerState\":2,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R2C1\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]},{\"type\":\"tablecell\",\"version\":1,\"headerState\":0,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R2C2\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]},{\"type\":\"tablecell\",\"version\":1,\"headerState\":0,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R2C3\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]}]}],\"grid\":{\"rows\":2,\"columns\":3}},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Below is an image: \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"image\",\"version\":1,\"imageUrl\":\"https://d37a7zdiv6xmqa.cloudfront.net/media/Sample-FIB-2_10001.png\",\"altText\":\"image\",\"mediaId\":\"100\",\"width\":800,\"height\":350,\"displayMode\":\"inline\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This is Blank 1 and its answer is\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"fitg\",\"version\":1,\"answer\":\"Answer 1\",\"width\":100},{\"type\":\"text\",\"version\":1,\"text\":\" \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"text\",\"version\":1,\"text\":\" \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"text\",\"version\":1,\"text\":\"The width of the blank is 100px\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}],\"columnIndex\":0,\"verticalAlign\":\"top\"},{\"type\":\"column\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This is the right column content.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"text\",\"version\":1,\"text\":\"Below is a Latex Rendered Visual in the right column.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"latex\",\"version\":1,\"code\":\"\\\\documentclass[tikz, border=10pt]{standalone}\\n\\\\usepackage{fontspec}\\n\\\\setmainfont{Latin Modern Roman}\\n\\\\usepackage{tikz}\\n\\\\usetikzlibrary{shapes.symbols, positioning}\\n\\\\usepackage{xcolor}\\n\\\\usepackage{bm}\\n\\n\\\\definecolor{K5_Indigo}{HTML}{2b0c81}\\n\\\\definecolor{K5_Blue}{HTML}{539df7}\\n\\\\definecolor{K5_Red}{HTML}{ff2500}\\n\\\\definecolor{K5_Black}{HTML}{000000}\\n\\\\definecolor{K5_White}{HTML}{ffffff}\\n\\n\\\\begin{document}\\n    \\\\begin{tikzpicture}\\n        % Board Background\\n        \\\\fill[K5_Black] (0,0) rectangle (4,2);\\n        \\\\draw[K5_Indigo, line width=2pt] (0,0) rectangle (4,2);\\n        \\n        % Dividers\\n        \\\\draw[K5_White!30] (2,0.2) -- (2,1.8);\\n        \\n        % Team Labels\\n        \\node[text=K5_White, font=\\\\sffamily\\\\tiny\\\\bfseries] at (1, 1.6) {TEAM A};\\n        \\node[text=K5_White, font=\\\\sffamily\\\\tiny\\\\bfseries] at (3, 1.6) {TEAM B};\\n        \\n        % Scores\\n        \\node[text=K5_Blue, font=\\\\sffamily\\\\LARGE\\\\bfseries] at (1, 0.9) {$286$};\\n        \\node[text=K5_Red, font=\\\\sffamily\\\\LARGE\\\\bfseries] at (3, 0.9) {$354$};\\n        \\n        % Logic Tags\\n        \\node[anchor=west, text=K5_Blue, font=\\\\sffamily\\\\tiny\\\\bfseries, draw=K5_Blue, rounded corners=1pt] at (4.2, 1.3) {TOTAL (+)};\\n        \\node[anchor=west, text=K5_Red, font=\\\\sffamily\\\\tiny\\\\bfseries, draw=K5_Red, rounded corners=1pt] at (4.2, 0.7) {GAP ($-$ )};\\n    \\\\end{tikzpicture}\\n\\\\end{document}\",\"image\":\"https://d37a7zdiv6xmqa.cloudfront.net/media/Sample-FIB-2_10002.png\",\"width\":276,\"height\":220},{\"type\":\"text\",\"version\":1,\"text\":\" \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This is Blank 2 and its answer is \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"fitg\",\"version\":1,\"answer\":\"Answer 2\",\"width\":200},{\"type\":\"text\",\"version\":1,\"text\":\" \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"text\",\"version\":1,\"text\":\" \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"text\",\"version\":1,\"text\":\"The width of the blank is 200px\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}],\"columnIndex\":1,\"verticalAlign\":\"top\"}]}]}}",
+  "_status": "draft",
+  "createdAt": "2026-01-24T18:21:29.146Z",
+  "updatedAt": "2026-01-24T18:21:29.146Z",
+  "mcqQuestion": {
+    "optionOrientation": "vertical",
+    "selectedMcqType": "default",
+    "options": []
+  },
+  "fitgQuestion": {
+    "selectFitgqType": "default",
+    "selectDnDPosition": "vertical",
+    "dropableTexts": []
+  },
+  "dndQuestion": {
+    "questionImage": null,
+    "dropableZones": [],
+    "selObjType": "text",
+    "dropObjects": [],
+    "assignDropableZones": [],
+    "positionDropableObjects": []
+  },
+  "classificationQuestion": {
+    "selectedClassificationType": "default",
+    "columnCount": 1,
+    "rowCount": 1,
+    "columnNames": [],
+    "rowNames": [],
+    "matrixCells": [],
+    "possibleResponses": [],
+    "correctAnswers": [],
+    "duplicateResponses": false,
+    "matchDS": {
+      "stimulusList": [],
+      "possibleResponses": [],
+      "optionMapping": {},
+      "duplicateResponses": false
+    }
+  },
+  "tokenHighlight": {
+    "templateText": {
+      "value": "",
+      "json": ""
+    },
+    "tokenType": "word",
+    "answers": []
+  },
+  "hasStepByStepSolution": true,
+  "solution": {
+    "root": {
+      "type": "root",
+      "version": 1,
+      "children": [
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "Here we keep a detailed Step by Step Solution with proper spacing with line and paragraph breaks.",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            },
+            {
+              "type": "linebreak",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We make use of Latex rendered visuals.",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            },
+            {
+              "type": "linebreak",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We use 1 column layout",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            },
+            {
+              "type": "linebreak",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We use formatting options",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            },
+            {
+              "type": "linebreak",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We keep all math (numbers, equations, fractions, formulas etc) in latex",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        }
+      ]
+    }
+  },
+  "hasHint": true,
+  "hint": {
+    "root": {
+      "type": "root",
+      "version": 1,
+      "children": [
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "Here we keep a simple 2 liner with proper spacing with line and paragraph breaks.",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            },
+            {
+              "type": "linebreak",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We use 1 column layout",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            },
+            {
+              "type": "linebreak",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We use formatting options",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            },
+            {
+              "type": "linebreak",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We keep all math (numbers, equations, fractions, formulas etc) in latex",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        }
+      ]
+    }
+  },
+  "tags": [
+    {
+      "id": "6974cf5ee95132000173a508",
+      "tag": "Tag 1"
+    },
+    {
+      "id": "6974cf5ee95132000173a509",
+      "tag": "Tag 2"
+    }
+  ]
+}

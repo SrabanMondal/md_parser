@@ -1,0 +1,64 @@
+{
+  "id": "Q-FITG-001",
+  "questionId": "",
+  "selectedQuestionType": "fitg",
+  "questionStem": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"heading\",\"tag\":\"h1\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Complete the sentence\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"The quick brown fox jumps over the lazy dog.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}",
+  "_status": "draft",
+  "createdAt": "2026-01-24T18:21:29.148Z",
+  "updatedAt": "2026-01-24T18:21:29.148Z",
+  "mcqQuestion": {
+    "optionOrientation": "vertical",
+    "selectedMcqType": "default",
+    "options": []
+  },
+  "fitgQuestion": {
+    "selectFitgqType": "default",
+    "selectDnDPosition": "bottom",
+    "dropableTexts": [
+      {
+        "text": "fox"
+      },
+      {
+        "text": "dog"
+      }
+    ]
+  },
+  "dndQuestion": {
+    "questionImage": null,
+    "dropableZones": [],
+    "selObjType": "text",
+    "dropObjects": [],
+    "assignDropableZones": [],
+    "positionDropableObjects": []
+  },
+  "classificationQuestion": {
+    "selectedClassificationType": "default",
+    "columnCount": 1,
+    "rowCount": 1,
+    "columnNames": [],
+    "rowNames": [],
+    "matrixCells": [],
+    "possibleResponses": [],
+    "correctAnswers": [],
+    "duplicateResponses": false,
+    "matchDS": {
+      "stimulusList": [],
+      "possibleResponses": [],
+      "optionMapping": {},
+      "duplicateResponses": false
+    }
+  },
+  "tokenHighlight": {
+    "templateText": {
+      "value": "",
+      "json": ""
+    },
+    "tokenType": "word",
+    "answers": []
+  },
+  "hasStepByStepSolution": false,
+  "solution": null,
+  "hasHint": false,
+  "hint": null,
+  "tags": []
+}

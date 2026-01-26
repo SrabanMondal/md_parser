@@ -1,0 +1,57 @@
+{
+  "id": "Q-TOKEN-001",
+  "questionId": "",
+  "selectedQuestionType": "token_highlight",
+  "questionStem": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"heading\",\"tag\":\"h1\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Highlight the nouns\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Select all the nouns in the sentence below.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}",
+  "_status": "draft",
+  "createdAt": "2026-01-24T18:21:29.159Z",
+  "updatedAt": "2026-01-24T18:21:29.159Z",
+  "mcqQuestion": {
+    "optionOrientation": "vertical",
+    "selectedMcqType": "default",
+    "options": []
+  },
+  "fitgQuestion": {
+    "selectFitgqType": "default",
+    "selectDnDPosition": "vertical",
+    "dropableTexts": []
+  },
+  "dndQuestion": {
+    "questionImage": null,
+    "dropableZones": [],
+    "selObjType": "text",
+    "dropObjects": [],
+    "assignDropableZones": [],
+    "positionDropableObjects": []
+  },
+  "classificationQuestion": {
+    "selectedClassificationType": "default",
+    "columnCount": 1,
+    "rowCount": 1,
+    "columnNames": [],
+    "rowNames": [],
+    "matrixCells": [],
+    "possibleResponses": [],
+    "correctAnswers": [],
+    "duplicateResponses": false,
+    "matchDS": {
+      "stimulusList": [],
+      "possibleResponses": [],
+      "optionMapping": {},
+      "duplicateResponses": false
+    }
+  },
+  "tokenHighlight": {
+    "templateText": {
+      "value": "The cat sat on the mat.",
+      "json": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"The cat sat on the mat.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}"
+    },
+    "tokenType": "word",
+    "answers": []
+  },
+  "hasStepByStepSolution": false,
+  "solution": null,
+  "hasHint": false,
+  "hint": null,
+  "tags": []
+}

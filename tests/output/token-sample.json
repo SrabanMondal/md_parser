@@ -1,0 +1,332 @@
+{
+  "id": 48,
+  "questionId": "Token-Sample_1",
+  "selectedQuestionType": "token_highlight",
+  "questionStem": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This is a Token Highlight Question. Below this line the Question stem is in 2 column Layout.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"columns\",\"version\":1,\"columns\":2,\"columnWidths\":[\"1fr\",\"1fr\"],\"children\":[{\"type\":\"column\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This is the part of the Question Stem in the Left column which has \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"equation\",\"version\":1,\"equation\":\"70 %\",\"inline\":true},{\"type\":\"text\",\"version\":1,\"text\":\"% width. \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"equation\",\"version\":1,\"equation\":\"70\",\"inline\":true},{\"type\":\"text\",\"version\":1,\"text\":\" is written in Latex. All numbers, formulas, units, expression, math will all be written in Latex with proper formatting like Fraction \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"equation\",\"version\":1,\"equation\":\"\\\\frac{a}{b}\",\"inline\":true},{\"type\":\"text\",\"version\":1,\"text\":\" is incorrect while \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"equation\",\"version\":1,\"equation\":\"\\\\dfrac{a}{b}\",\"inline\":true},{\"type\":\"text\",\"version\":1,\"text\":\" is correct.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This entire sentence is in bold\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This entire sentence is in bold and italics\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"linebreak\",\"version\":1}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This is a table with 2 rows and 3 columns:\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"table\",\"version\":1,\"children\":[{\"type\":\"tablerow\",\"version\":1,\"children\":[{\"type\":\"tablecell\",\"version\":1,\"headerState\":3,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R1C1\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]},{\"type\":\"tablecell\",\"version\":1,\"headerState\":1,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R1C2\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]},{\"type\":\"tablecell\",\"version\":1,\"headerState\":1,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R1C3\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]}]},{\"type\":\"tablerow\",\"version\":1,\"children\":[{\"type\":\"tablecell\",\"version\":1,\"headerState\":2,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R2C1\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]},{\"type\":\"tablecell\",\"version\":1,\"headerState\":0,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R2C2\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]},{\"type\":\"tablecell\",\"version\":1,\"headerState\":0,\"width\":188,\"colSpan\":1,\"rowSpan\":1,\"backgroundColor\":null,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"R2C3\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}]}]}]}],\"grid\":{\"rows\":2,\"columns\":3}},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"linebreak\",\"version\":1}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Below is an image:\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"image\",\"version\":1,\"imageUrl\":\"https://d2lhxh95t9lwdp.cloudfront.net/US_NG_G7_L2_image_026\",\"altText\":\"This is the Alt Text for US NG G7 L2 image 026\",\"mediaId\":\"\",\"width\":400,\"height\":175,\"displayMode\":\"inline\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}],\"columnIndex\":0,\"verticalAlign\":\"top\"},{\"type\":\"column\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This is the right column content.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"Below is a Latex Rendered Visual in the right column.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"latex\",\"version\":1,\"code\":\"\\\\documentclass[tikz, border=10pt]{standalone}\\n\\\\usepackage{fontspec}\\n\\\\setmainfont{Latin Modern Roman}\\n\\\\usepackage{tikz}\\n\\\\usetikzlibrary{shapes.symbols, positioning}\\n\\\\usepackage{xcolor}\\n\\\\usepackage{bm}\\n\\n\\\\definecolor{K5_Indigo}{HTML}{2b0c81}\\n\\\\definecolor{K5_Blue}{HTML}{539df7}\\n\\\\definecolor{K5_Red}{HTML}{ff2500}\\n\\\\definecolor{K5_Black}{HTML}{000000}\\n\\\\definecolor{K5_White}{HTML}{ffffff}\\n\\n\\\\begin{document}\\n    \\\\begin{tikzpicture}\\n        % Board Background\\n        \\\\fill[K5_Black] (0,0) rectangle (4,2);\\n        \\\\draw[K5_Indigo, line width=2pt] (0,0) rectangle (4,2);\\n        \\n        % Dividers\\n        \\\\draw[K5_White!30] (2,0.2) -- (2,1.8);\\n        \\n        % Team Labels\\n        \\\\node[text=K5_White, font=\\\\sffamily\\\\tiny\\\\bfseries] at (1, 1.6) {TEAM A};\\n        \\\\node[text=K5_White, font=\\\\sffamily\\\\tiny\\\\bfseries] at (3, 1.6) {TEAM B};\\n        \\n        % Scores\\n        \\\\node[text=K5_Blue, font=\\\\sffamily\\\\LARGE\\\\bfseries] at (1, 0.9) {$286$};\\n        \\\\node[text=K5_Red, font=\\\\sffamily\\\\LARGE\\\\bfseries] at (3, 0.9) {$354$};\\n        \\n        % Logic Tags\\n        \\\\node[anchor=west, text=K5_Blue, font=\\\\sffamily\\\\tiny\\\\bfseries, draw=K5_Blue, rounded corners=1pt] at (4.2, 1.3) {TOTAL (+)};\\n        \\\\node[anchor=west, text=K5_Red, font=\\\\sffamily\\\\tiny\\\\bfseries, draw=K5_Red, rounded corners=1pt] at (4.2, 0.7) {GAP ($-$ )};\\n    \\\\end{tikzpicture}\\n\\\\end{document}\",\"image\":\"https://d37a7zdiv6xmqa.cloudfront.net/media/Token-Sample-5_10001.png\",\"width\":313,\"height\":157},{\"type\":\"text\",\"version\":1,\"text\":\" \",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}],\"columnIndex\":1,\"verticalAlign\":\"top\"}]}]}}",
+  "_status": "draft",
+  "createdAt": "2026-01-24T18:21:29.160Z",
+  "updatedAt": "2026-01-24T18:21:29.160Z",
+  "mcqQuestion": {
+    "optionOrientation": "vertical",
+    "selectedMcqType": "default",
+    "options": [],
+    "matrix": {
+      "secondaryOptions": [
+        {
+          "_id": "1",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"True\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}"
+        },
+        {
+          "_id": "2",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"False\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}"
+        }
+      ],
+      "isMultipleResponse": false,
+      "optionMapping": [
+        {
+          "1": [
+            "1"
+          ]
+        },
+        {
+          "2": [
+            "1"
+          ]
+        },
+        {
+          "3": [
+            "2"
+          ]
+        },
+        {
+          "4": [
+            "1"
+          ]
+        }
+      ]
+    }
+  },
+  "fitgQuestion": {
+    "selectFitgqType": "default",
+    "selectDnDPosition": "vertical",
+    "dropableTexts": []
+  },
+  "dndQuestion": {
+    "questionImage": null,
+    "dropableZones": [],
+    "selObjType": "text",
+    "dropObjects": [],
+    "assignDropableZones": [],
+    "positionDropableObjects": []
+  },
+  "classificationQuestion": {
+    "selectedClassificationType": "default",
+    "columnCount": 1,
+    "rowCount": 1,
+    "columnNames": [],
+    "rowNames": [],
+    "matrixCells": [],
+    "possibleResponses": [],
+    "correctAnswers": [],
+    "duplicateResponses": false,
+    "matchDS": {
+      "stimulusList": [
+        {
+          "id": "6974835ae95132000173a4c1",
+          "_id": "1",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[]}}"
+        },
+        {
+          "id": "6974835ae95132000173a4c2",
+          "_id": "2",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[]}}"
+        },
+        {
+          "id": "6974835ae95132000173a4c3",
+          "_id": "3",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[]}}"
+        }
+      ],
+      "possibleResponses": [
+        {
+          "id": "6974835ae95132000173a4c4",
+          "_id": "1",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[]}}"
+        },
+        {
+          "id": "6974835ae95132000173a4c5",
+          "_id": "2",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[]}}"
+        },
+        {
+          "id": "6974835ae95132000173a4c6",
+          "_id": "3",
+          "option": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[]}}"
+        }
+      ],
+      "optionMapping": {},
+      "duplicateResponses": false
+    }
+  },
+  "tokenHighlight": {
+    "templateText": {
+      "value": "She reads a book.\n\nA book is read by her.\n\nThe meal was cooked by the chef.\n\nThe chef cooked the meal.",
+      "json": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"She reads a book.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"A book is read by her.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"The meal was cooked by the chef.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"},{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"The chef cooked the meal.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}"
+    },
+    "tokenType": "word",
+    "answers": [
+      0,
+      2,
+      5,
+      8
+    ]
+  },
+  "hasStepByStepSolution": true,
+  "solution": {
+    "root": {
+      "type": "root",
+      "version": 1,
+      "children": [
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "Here we keep a detailed Step by Step Solution with proper spacing with line and paragraph breaks.",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        },
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We make use of Latex rendered visuals.",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        },
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We use 1 column layout",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        },
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We use formatting options",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        },
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We keep all math (numbers, equations, fractions, formulas etc) in latex",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        }
+      ]
+    }
+  },
+  "hasHint": true,
+  "hint": {
+    "root": {
+      "type": "root",
+      "version": 1,
+      "children": [
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "Here we keep a simple 2 liner with proper spacing with line and paragraph breaks.",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        },
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We use 1 column layout",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        },
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We use formatting options",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        },
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We keep all math (numbers, equations, fractions, formulas etc) in latex",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        }
+      ]
+    }
+  },
+  "tags": [
+    {
+      "id": "6974835ae95132000173a4c7",
+      "tag": "Tag 1"
+    },
+    {
+      "id": "6974835ae95132000173a4c8",
+      "tag": "Tag 2"
+    }
+  ]
+}

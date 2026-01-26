@@ -1,0 +1,851 @@
+{
+  "id": 11,
+  "questionId": "MAMCQ-Passage-Sample",
+  "selectedQuestionType": "MCQ",
+  "questionStem": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This is the Question stem for the Passage.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"text\",\"version\":1,\"text\":\"In this soliloquy, what is Hamlet contemplating?\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}",
+  "_status": "draft",
+  "createdAt": "2026-01-24T18:21:29.154Z",
+  "updatedAt": "2026-01-24T18:21:29.154Z",
+  "mcqQuestion": {
+    "optionOrientation": "vertical",
+    "selectedMcqType": "passage",
+    "options": [
+      {
+        "id": "6960e7451bce46000111d923",
+        "option": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Whether to avenge his father's death or forgive his uncle.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "format": "",
+                "indent": 0,
+                "direction": null,
+                "textFormat": 0,
+                "textStyle": ""
+              }
+            ]
+          }
+        },
+        "isCorrectAnswer": false,
+        "_id": "1"
+      },
+      {
+        "id": "6960e7451bce46000111d924",
+        "option": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "The choice between living with suffering or ending his life.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  },
+                  {
+                    "type": "linebreak",
+                    "version": 1
+                  },
+                  {
+                    "type": "latex",
+                    "version": 1,
+                    "code": "\\documentclass[tikz,border=10pt]{standalone}\n\\usepackage{fontspec}\n\\usepackage{tikz}\n\\usetikzlibrary{arrows.meta}\n\\usepackage{xcolor}\n\\usepackage{bm}\n\\setmainfont{Latin Modern Roman}\n\\definecolor{K5_Indigo}{HTML}{2b0c81}\n\\definecolor{K5_Red}{HTML}{ff2500}\n\\definecolor{K5_Blue}{HTML}{539df7}\n\n\\begin{document}\n    \\begin{tikzpicture}[font=\\sffamily, scale=0.8]\n        % Linear Stairs (Path 1)\n        \\draw[K5_Indigo, line width=2pt] (0,0) -- (1,0) -- (1,1) -- (2,1) -- (2,2) -- (3,2) -- (3,3) -- (4,3);\n        \node[K5_Indigo] at (0.5,-0.5) {$2$};\n        \node[K5_Indigo] at (1.5,0.5) {$4$};\n        \node[K5_Indigo] at (2.5,1.5) {$6$};\n        \node[K5_Indigo] at (3.5,2.5) {$8$};\n        \node[K5_Indigo, anchor=west] at (4,3) {Linear};\n\n        % Exponential Curve (Path 2)\n        \\draw[K5_Red, line width=2pt, ->, >=Stealth] (5,0) .. controls (6,0.5) and (7,2) .. (8,8);\n        \\fill[K5_Red] (5,0) circle (3pt) node[right=5pt] {$2$};\n        \\fill[K5_Red] (5.8,0.6) circle (3pt) node[right=5pt] {$4$};\n        \\fill[K5_Red] (6.8,2.4) circle (3pt) node[right=5pt] {$8$};\n        \\fill[K5_Red] (7.8,6.5) circle (3pt) node[right=5pt] {$16$};\n        \node[K5_Red, anchor=west] at (8,8) {Exponential};\n    \\end{tikzpicture}\n\\end{document}",
+                    "image": "https://d37a7zdiv6xmqa.cloudfront.net/media/MAMCQ-Passage-Sample_10002.png",
+                    "width": 416,
+                    "height": 167
+                  },
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": " ",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "format": "",
+                "indent": 0,
+                "direction": null,
+                "textFormat": 0,
+                "textStyle": ""
+              }
+            ]
+          }
+        },
+        "isCorrectAnswer": true,
+        "_id": "2"
+      },
+      {
+        "id": "6960e7451bce46000111d925",
+        "option": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Deciding whether to go to war or seek a peaceful resolution.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  },
+                  {
+                    "type": "linebreak",
+                    "version": 1
+                  },
+                  {
+                    "type": "image",
+                    "version": 1,
+                    "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/US_NG_G7_L2_image_026",
+                    "altText": "US NG G7 L2 image 026",
+                    "mediaId": "",
+                    "width": 400,
+                    "height": 175,
+                    "displayMode": "inline"
+                  }
+                ],
+                "format": "",
+                "indent": 0,
+                "direction": null,
+                "textFormat": 0,
+                "textStyle": ""
+              }
+            ]
+          }
+        },
+        "isCorrectAnswer": false,
+        "_id": "3"
+      },
+      {
+        "id": "6960e7451bce46000111d926",
+        "option": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "children": [
+              {
+                "type": "paragraph",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "The meaning of dreams and their connection to reality.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "format": "",
+                "indent": 0,
+                "direction": null,
+                "textFormat": 0,
+                "textStyle": ""
+              }
+            ]
+          }
+        },
+        "isCorrectAnswer": true,
+        "_id": "4"
+      }
+    ],
+    "passage": {
+      "root": {
+        "type": "root",
+        "version": 1,
+        "children": [
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "This is the passage :",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              },
+              {
+                "type": "linebreak",
+                "version": 1
+              },
+              {
+                "type": "linebreak",
+                "version": 1
+              },
+              {
+                "type": "equation",
+                "version": 1,
+                "equation": "\\dfrac{a}{b}",
+                "inline": true
+              },
+              {
+                "type": "text",
+                "version": 1,
+                "text": " is fraction written in latex",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "Below is a bulleted list:",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "list",
+            "version": 1,
+            "listType": "bullet",
+            "tag": "ul",
+            "children": [
+              {
+                "type": "listitem",
+                "version": 1,
+                "format": "",
+                "indent": 0,
+                "value": 1,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Bullet point 1",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "direction": "ltr"
+              },
+              {
+                "type": "listitem",
+                "version": 1,
+                "format": "",
+                "indent": 0,
+                "value": 2,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Bullet point 2",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "direction": "ltr"
+              }
+            ],
+            "start": 1,
+            "direction": "ltr",
+            "format": "",
+            "indent": 0
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "Below is a numbered list:",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "list",
+            "version": 1,
+            "listType": "number",
+            "tag": "ol",
+            "children": [
+              {
+                "type": "listitem",
+                "version": 1,
+                "format": "",
+                "indent": 0,
+                "value": 1,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "pointer number 1",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "direction": "ltr"
+              },
+              {
+                "type": "listitem",
+                "version": 1,
+                "format": "",
+                "indent": 0,
+                "value": 2,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "pointer number 2",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "direction": "ltr"
+              }
+            ],
+            "start": 1,
+            "direction": "ltr",
+            "format": "",
+            "indent": 0
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "This sentence is in bold",
+                "format": 1,
+                "detail": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 1,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "This sentence is in italics",
+                "format": 3,
+                "detail": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "Below is an image",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "image",
+                "version": 1,
+                "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/US_NG_G7_L2_image_026",
+                "altText": "US NG G7 L2 image 026",
+                "mediaId": "",
+                "width": 400,
+                "height": 175,
+                "displayMode": "inline"
+              },
+              {
+                "type": "linebreak",
+                "version": 1
+              },
+              {
+                "type": "text",
+                "version": 1,
+                "text": "To be, or not to be, that is the question:",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "Whether 'tis nobler in the mind to suffer",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "The slings and arrows of outrageous fortune,",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "Or to take arms against a sea of troubles",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "And by opposing end them. To die—to sleep,",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "No more; and by a sleep to say we end",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "The heart-ache and the thousand natural shocks",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "That flesh is heir to: 'tis a consummation",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "Devoutly to be wish'd. To die, to sleep;",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "version": 1,
+                "text": "To sleep, perchance to dream—ay, there's the rub...",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          },
+          {
+            "type": "list",
+            "version": 1,
+            "listType": "bullet",
+            "tag": "ul",
+            "children": [
+              {
+                "type": "listitem",
+                "version": 1,
+                "format": "",
+                "indent": 0,
+                "value": 1,
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "From William Shakespeare's Hamlet",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ],
+                "direction": "ltr"
+              }
+            ],
+            "start": 1,
+            "direction": "ltr",
+            "format": "",
+            "indent": 0
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "latex",
+                "version": 1,
+                "code": "\\documentclass[tikz,border=10pt]{standalone}\n\\usepackage{fontspec}\n\\usepackage{tikz}\n\\usetikzlibrary{arrows.meta}\n\\usepackage{xcolor}\n\\usepackage{bm}\n\\setmainfont{Latin Modern Roman}\n\\definecolor{K5_Indigo}{HTML}{2b0c81}\n\\definecolor{K5_Red}{HTML}{ff2500}\n\\definecolor{K5_Blue}{HTML}{539df7}\n\n\\begin{document}\n    \\begin{tikzpicture}[font=\\sffamily, scale=0.8]\n        % Linear Stairs (Path 1)\n        \\draw[K5_Indigo, line width=2pt] (0,0) -- (1,0) -- (1,1) -- (2,1) -- (2,2) -- (3,2) -- (3,3) -- (4,3);\n        \node[K5_Indigo] at (0.5,-0.5) {$2$};\n        \node[K5_Indigo] at (1.5,0.5) {$4$};\n        \node[K5_Indigo] at (2.5,1.5) {$6$};\n        \node[K5_Indigo] at (3.5,2.5) {$8$};\n        \node[K5_Indigo, anchor=west] at (4,3) {Linear};\n\n        % Exponential Curve (Path 2)\n        \\draw[K5_Red, line width=2pt, ->, >=Stealth] (5,0) .. controls (6,0.5) and (7,2) .. (8,8);\n        \\fill[K5_Red] (5,0) circle (3pt) node[right=5pt] {$2$};\n        \\fill[K5_Red] (5.8,0.6) circle (3pt) node[right=5pt] {$4$};\n        \\fill[K5_Red] (6.8,2.4) circle (3pt) node[right=5pt] {$8$};\n        \\fill[K5_Red] (7.8,6.5) circle (3pt) node[right=5pt] {$16$};\n        \node[K5_Red, anchor=west] at (8,8) {Exponential};\n    \\end{tikzpicture}\n\\end{document}",
+                "image": "https://d37a7zdiv6xmqa.cloudfront.net/media/MAMCQ-Passage-Sample_10001.png",
+                "width": 331,
+                "height": 284
+              },
+              {
+                "type": "text",
+                "version": 1,
+                "text": " ",
+                "detail": 0,
+                "format": 0,
+                "mode": "normal",
+                "style": ""
+              }
+            ],
+            "format": "",
+            "indent": 0,
+            "direction": null,
+            "textFormat": 0,
+            "textStyle": ""
+          }
+        ]
+      }
+    }
+  },
+  "fitgQuestion": {
+    "selectFitgqType": "default",
+    "selectDnDPosition": "vertical",
+    "dropableTexts": []
+  },
+  "dndQuestion": {
+    "questionImage": null,
+    "dropableZones": [],
+    "selObjType": "text",
+    "dropObjects": [],
+    "assignDropableZones": [],
+    "positionDropableObjects": []
+  },
+  "classificationQuestion": {
+    "selectedClassificationType": "default",
+    "columnCount": 1,
+    "rowCount": 1,
+    "columnNames": [],
+    "rowNames": [],
+    "matrixCells": [],
+    "possibleResponses": [],
+    "correctAnswers": [],
+    "duplicateResponses": false,
+    "matchDS": {
+      "stimulusList": [],
+      "possibleResponses": [],
+      "optionMapping": {},
+      "duplicateResponses": false
+    }
+  },
+  "tokenHighlight": {
+    "templateText": {
+      "value": "",
+      "json": ""
+    },
+    "tokenType": "word",
+    "answers": []
+  },
+  "hasStepByStepSolution": true,
+  "solution": {
+    "root": {
+      "type": "root",
+      "version": 1,
+      "children": [
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "Here we keep a simple 2 liner with proper spacing with line and paragraph breaks.",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            },
+            {
+              "type": "linebreak",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We use 1 column layout",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            },
+            {
+              "type": "linebreak",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We use formatting options",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            },
+            {
+              "type": "linebreak",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "version": 1,
+              "text": "We keep all math (numbers, equations, fractions, formulas etc) in latex",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        }
+      ]
+    }
+  },
+  "hasHint": true,
+  "hint": {
+    "root": {
+      "type": "root",
+      "version": 1,
+      "children": [
+        {
+          "type": "paragraph",
+          "version": 1,
+          "children": [
+            {
+              "type": "text",
+              "version": 1,
+              "text": "Analyze the very first line: 'To be, or not to be, that is the question'. What fundamental choice does this phrase represent?",
+              "detail": 0,
+              "format": 0,
+              "mode": "normal",
+              "style": ""
+            }
+          ],
+          "format": "",
+          "indent": 0,
+          "direction": null,
+          "textFormat": 0,
+          "textStyle": ""
+        }
+      ]
+    }
+  },
+  "tags": [
+    {
+      "id": "6960e7451bce46000111d92d",
+      "tag": "Tag 1"
+    },
+    {
+      "id": "6960e7451bce46000111d92e",
+      "tag": "Tag 2"
+    }
+  ]
+}
