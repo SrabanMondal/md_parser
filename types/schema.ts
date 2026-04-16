@@ -11,6 +11,7 @@ export type LexicalRoot = {
 export type LexicalNode =
     | LexicalParagraph
     | LexicalText
+    | LexicalHighlight
     | LexicalHeading
     | LexicalImage
     | LexicalEquation
@@ -25,6 +26,7 @@ export type LexicalNode =
     | LexicalFitg
     | LexicalLineBreak;
 
+
 export interface LexicalParagraph {
     type: 'paragraph';
     version: 1;
@@ -36,14 +38,22 @@ export interface LexicalParagraph {
     textStyle?: string;
 }
 
-export interface LexicalText {
-    type: 'text';
-    version: 1;
-    text: string;
-    detail?: number;
-    format?: number;
-    mode?: 'normal' | 'token' | 'segmented';
-    style?: string;
+interface LexicalTextBase {
+  version: 1;
+  text: string;
+  detail?: number;
+  format?: number;
+  mode?: 'normal' | 'token' | 'segmented';
+  style?: string;
+}
+
+export interface LexicalText extends LexicalTextBase {
+  type: 'text';
+}
+
+export interface LexicalHighlight extends LexicalTextBase {
+  type: 'highlight';
+  className: string;
 }
 
 export interface LexicalHeading {

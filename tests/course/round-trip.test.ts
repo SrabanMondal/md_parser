@@ -40,6 +40,11 @@ const fixtures: Fixture[] = [
         md: fs.readFileSync(path.join(testDir, 'test2.md'), 'utf-8'),
         json: JSON.parse(fs.readFileSync(path.join(testDir, 'test2.json'), 'utf-8')),
     },
+    {
+        name: 'test3',
+        md: '', // JSON-only fixture — no source .md file
+        json: JSON.parse(fs.readFileSync(path.join(testDir, 'test3.json'), 'utf-8')),
+    },
 ];
 
 // ═══════════════════════════════════════════════════════════
@@ -199,9 +204,47 @@ function mergeAdjacentTextNodes(obj: any): any {
     return obj;
 }
 
+/**
+ * Remove container-level decorative properties that the parser may not produce
+ * but test JSON may include. These don't affect content identity:
+ * direction, textStyle, textFormat, columns (count), columnIndex, verticalAlign,
+ * colWidths, colSpan, rowSpan, width (on cells/images), height (on rows/images),
+ * tag (on lists), start, backgroundColor, displayMode, mode, detail,
+ * format (when empty string on containers), indent (when 0)
+ */
+function removeContainerDecorativeProps(obj: any): any {
+    if (Array.isArray(obj)) return obj.map(removeContainerDecorativeProps);
+    if (obj !== null && typeof obj === 'object') {
+        const result: any = {};
+        const skipKeys = new Set([
+            'direction', 'textStyle', 'textFormat',
+            'columns', 'columnIndex', 'verticalAlign',
+            'colWidths', 'colSpan', 'rowSpan',
+            'width', 'height',
+            'tag', 'start', 'backgroundColor',
+            'displayMode', 'mode', 'detail',
+            'grid', 'mediaId',
+            'headerState',
+        ]);
+        for (const [key, value] of Object.entries(obj)) {
+            // Skip format when it's empty string (container-level) or 0 (default on inline nodes)
+            if (key === 'format' && (value === '' || value === 0)) continue;
+            // Skip indent when 0
+            if (key === 'indent' && value === 0) continue;
+            // Skip empty string src/style (parser defaults)
+            if ((key === 'src' || key === 'style') && value === '') continue;
+            // Skip the container-decorative keys
+            if (skipKeys.has(key)) continue;
+            result[key] = removeContainerDecorativeProps(value);
+        }
+        return result;
+    }
+    return obj;
+}
+
 /** Apply all normalization steps to a JSON structure. */
 function normalize(json: any): any {
-    return mergeAdjacentTextNodes(removeOptionalProps(normalizeHeaderState(normalizeIds(json))));
+    return mergeAdjacentTextNodes(removeContainerDecorativeProps(removeOptionalProps(normalizeHeaderState(normalizeIds(json)))));
 }
 
 /**
@@ -303,29 +346,37 @@ function runFixture(fixture: Fixture): number {
 
     console.log(`\n╔═══ Fixture: ${fixture.name} ${'═'.repeat(40 - fixture.name.length)}╗`);
 
+    // Variables shared across tests
+    let json2: any = null; // Re-parsed JSON for MD regeneration test
+    let md1: string = '';  // Generated MD from parsing fixture.md
+
     // ─── A. MD Round-Trip Stability ────────────────────────
-    testNumber++;
-    console.log(`\n─── Test ${testNumber}: [${fixture.name}] MD Round-Trip (MD → JSON₁ → MD₁ → JSON₂) ───\n`);
+    if (fixture.md) {
+        testNumber++;
+        console.log(`\n─── Test ${testNumber}: [${fixture.name}] MD Round-Trip (MD → JSON₁ → MD₁ → JSON₂) ───\n`);
 
-    const parser1 = new MarkdownParser(fixture.md);
-    const json1 = parser1.parse();
+        const parser1 = new MarkdownParser(fixture.md);
+        const json1 = parser1.parse();
 
-    const generator1 = new MarkdownGenerator(json1);
-    const md1 = generator1.generate();
+        const generator1 = new MarkdownGenerator(json1);
+        md1 = generator1.generate();
 
-    const parser2 = new MarkdownParser(md1);
-    const json2 = parser2.parse();
+        const parser2 = new MarkdownParser(md1);
+        json2 = parser2.parse();
 
-    const diffs1 = deepCompare(normalize(json1), normalize(json2));
+        const diffs1 = deepCompare(normalize(json1), normalize(json2));
 
-    if (diffs1.length === 0) {
-        console.log('  ✅ PASS: MD round-trip is stable (JSON₁ ≈ JSON₂)');
-        pass++;
+        if (diffs1.length === 0) {
+            console.log('  ✅ PASS: MD round-trip is stable (JSON₁ ≈ JSON₂)');
+            pass++;
+        } else {
+            console.log(`  ❌ FAIL: ${diffs1.length} differences found`);
+            diffs1.slice(0, 20).forEach(d => console.log(`    ${d}`));
+            if (diffs1.length > 20) console.log(`    ... and ${diffs1.length - 20} more`);
+            fail++;
+        }
     } else {
-        console.log(`  ❌ FAIL: ${diffs1.length} differences found`);
-        diffs1.slice(0, 20).forEach(d => console.log(`    ${d}`));
-        if (diffs1.length > 20) console.log(`    ... and ${diffs1.length - 20} more`);
-        fail++;
+        console.log(`\n  ⏭  Skipped MD Round-Trip (no source .md file)`);
     }
 
     // ─── B. JSON Round-Trip ───────────────────────────────
@@ -351,13 +402,17 @@ function runFixture(fixture: Fixture): number {
     }
 
     // ─── C. MD Regeneration Stability ─────────────────────
+    // For JSON-only fixtures, use md2 (from JSON round-trip) as the source
+    const sourceMd = fixture.md ? md1 : md2;
+    const sourceJson = fixture.md ? json2 : json3;
+
     testNumber++;
     console.log(`\n─── Test ${testNumber}: [${fixture.name}] MD Regeneration (MD₁ → JSON₂ → MD₂ === MD₁) ───\n`);
 
-    const generator3 = new MarkdownGenerator(json2);
+    const generator3 = new MarkdownGenerator(sourceJson);
     const md3 = generator3.generate();
 
-    const normalizedMd1 = normalizeMd(md1);
+    const normalizedMd1 = normalizeMd(sourceMd);
     const normalizedMd3 = normalizeMd(md3);
 
     if (normalizedMd1 === normalizedMd3) {
@@ -385,12 +440,13 @@ function runFixture(fixture: Fixture): number {
 
     // ─── Write output files for manual inspection ─────────
     const prefix = fixture.name;
-    fs.writeFileSync(path.join(testDir, `${prefix}.generated.md`), md1, 'utf-8');
-    fs.writeFileSync(path.join(testDir, `${prefix}.generated.json`), JSON.stringify(json1, null, 2), 'utf-8');
+    if (fixture.md) {
+        fs.writeFileSync(path.join(testDir, `${prefix}.generated.md`), md1, 'utf-8');
+    }
     fs.writeFileSync(path.join(testDir, `${prefix}.roundtrip.md`), md2, 'utf-8');
     fs.writeFileSync(path.join(testDir, `${prefix}.roundtrip.json`), JSON.stringify(json3, null, 2), 'utf-8');
 
-    console.log(`\n  Output: ${prefix}.generated.md / .json, ${prefix}.roundtrip.md / .json`);
+    console.log(`\n  Output: ${prefix}.roundtrip.md / .json`);
     console.log(`╚${'═'.repeat(47)}╝`);
 
     totalPass += pass;

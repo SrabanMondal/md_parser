@@ -568,6 +568,8 @@ export class MarkdownGenerator {
         switch (node.type) {
             case 'text':
                 return this.generateText(node as LexicalText);
+            case 'highlight':
+                return this.generateHighlight(node as any);
             case 'image':
                 return this.generateImage(node as any);
             case 'equation':
@@ -584,14 +586,50 @@ export class MarkdownGenerator {
     }
 
     /**
-     * Text node: apply bold/italic formatting.
-     * Parser: format=1 → **bold**, format=2 → *italic*
+     * Text node: apply formatting.
+     *
+     * For plain bold (format=1) or italic (format=2) WITHOUT style, use markdown.
+     * For styled text (has style property) or other format values, use span tags.
+     *
+     * Canonical span format:
+     *   span style="..." data-format="N" text /span
      */
     private generateText(node: LexicalText): string {
+        const hasStyle = node.style && node.style.trim() !== '';
+        const format = node.format || 0;
+
+        // If node has style, always use span (even for bold/italic — style must survive)
+        if (hasStyle) {
+            const attrs: string[] = [];
+            attrs.push(`style="${node.style}"`);
+            if (format !== 0) attrs.push(`data-format="${format}"`);
+            return `<span ${attrs.join(' ')}>${node.text}</span>`;
+        }
+
+        // No style — use standard markdown for bold/italic
         let text = node.text;
-        if (node.format === 1) text = `**${text}**`;
-        else if (node.format === 2) text = `*${text}*`;
+        if (format === 1) text = `**${text}**`;
+        else if (format === 2) text = `*${text}*`;
+        else if (format !== 0) {
+            // Non-standard format (e.g. 3=bold+italic, 8=underline) — use span
+            return `<span data-format="${format}">${text}</span>`;
+        }
         return text;
+    }
+
+    /**
+     * Highlight node: always uses <span> with data-type="highlight".
+     *
+     * Canonical format:
+     *   <span data-type="highlight" style="..." class="..." data-format="N">text</span>
+     */
+    private generateHighlight(node: any): string {
+        const attrs: string[] = [`data-type="highlight"`];
+        if (node.style && node.style.trim() !== '') attrs.push(`style="${node.style}"`);
+        if (node.className) attrs.push(`class="${node.className}"`);
+        const format = node.format || 0;
+        if (format !== 0) attrs.push(`data-format="${format}"`);
+        return `<span ${attrs.join(' ')}>${node.text}</span>`;
     }
 
     /**

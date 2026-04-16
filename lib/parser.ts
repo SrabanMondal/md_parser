@@ -1113,18 +1113,20 @@ export class MarkdownParser {
             type: 'heading',
             tag: tag,
             version: 1,
-            children: [{ type: 'text', version: 1, text: text }],
+            children: this.parseInlineText(text),
         };
     }
 
     private parseInlineText(text: string, isMCQBlock: boolean = false): LexicalNode[] {
         const nodes: LexicalNode[] = [];
-        const regex = /(\*\*.*?\*\*)|(\*.*?\*)|(!\[(.*?)\]\((.*?)\))|(\$[^$]*?\$)/g;
+        // Extended regex: adds <span ...>text</span> pattern for styled text / highlight nodes.
+        // Groups: 1=bold, 2=italic, 3=image(full), 4=alt, 5=src, 6=equation, 7=span(full), 8=spanAttrs, 9=spanText
+        const regex = /(\*\*.*?\*\*)|(\*.*?\*)|(!\[(.*?)\]\((.*?)\))|(\$[^$]*?\$)|(<span\s([^>]*)>(.*?)<\/span>)/g;
         let lastIndex = 0;
         let match;
 
         while ((match = regex.exec(text)) !== null) {
-            const [fullMatch, bold, italic, image, alt, src, equation] = match;
+            const [fullMatch, bold, italic, image, alt, src, equation, spanFull, spanAttrs, spanText] = match;
             const leadText = text.substring(lastIndex, match.index);
             if (leadText) {
                 nodes.push({ type: 'text', version: 1, text: leadText });
@@ -1159,6 +1161,41 @@ export class MarkdownParser {
                 }
             } else if (equation) {
                 nodes.push({ type: 'equation', version: 1, equation: equation.slice(1, -1), inline: true });
+            } else if (spanFull) {
+                // Parse <span> attributes for styled text / highlight nodes
+                const styleMatch = spanAttrs.match(/style="([^"]*)"/);
+                const classMatch = spanAttrs.match(/class="([^"]*)"/);
+                const typeMatch = spanAttrs.match(/data-type="([^"]*)"/);
+                const formatMatch = spanAttrs.match(/data-format="([^"]*)"/);
+
+                const nodeStyle = styleMatch ? styleMatch[1] : '';
+                const nodeClass = classMatch ? classMatch[1] : '';
+                const nodeType = typeMatch ? typeMatch[1] : 'text';
+                const nodeFormat = formatMatch ? parseInt(formatMatch[1]) : 0;
+
+                if (nodeType === 'highlight') {
+                    const node: any = {
+                        type: 'highlight',
+                        version: 1,
+                        text: spanText || '',
+                        format: nodeFormat,
+                        detail: 0,
+                        mode: 'normal',
+                    };
+                    if (nodeStyle) node.style = nodeStyle;
+                    if (nodeClass) node.className = nodeClass;
+                    nodes.push(node);
+                } else {
+                    // Styled text node
+                    const node: any = {
+                        type: 'text',
+                        version: 1,
+                        text: spanText || '',
+                        format: nodeFormat,
+                    };
+                    if (nodeStyle) node.style = nodeStyle;
+                    nodes.push(node);
+                }
             }
             lastIndex = match.index + fullMatch.length;
         }
@@ -1256,13 +1293,12 @@ export class MarkdownParser {
                                     version: 1,
                                     text: textNode.text,
                                     detail: 0,
-                                    format: 0,
+                                    format: textNode.format || 0,
                                     mode: 'normal' as const,
-                                    style: ''
+                                    style: textNode.style || ''
                                 };
                             }
-                            // For other node types, we need to handle them differently
-                            // but for now, let's focus on text nodes which are the most common
+                            // For highlight and other node types, pass through as-is
                             return node;
                         }),
                 direction: 'ltr'
