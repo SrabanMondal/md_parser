@@ -4,8 +4,8 @@
   "selectedQuestionType": "MCQ",
   "questionStem": "{\"root\":{\"type\":\"root\",\"version\":1,\"children\":[{\"type\":\"paragraph\",\"version\":1,\"children\":[{\"type\":\"text\",\"version\":1,\"text\":\"This is the Question stem for the Passage.\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"linebreak\",\"version\":1},{\"type\":\"text\",\"version\":1,\"text\":\"In this soliloquy, what is Hamlet contemplating?\",\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\"}],\"format\":\"\",\"indent\":0,\"direction\":null,\"textFormat\":0,\"textStyle\":\"\"}]}}",
   "_status": "draft",
-  "createdAt": "2026-01-24T18:21:29.154Z",
-  "updatedAt": "2026-01-24T18:21:29.154Z",
+  "createdAt": "2026-02-02T13:53:37.215Z",
+  "updatedAt": "2026-02-02T13:53:37.215Z",
   "mcqQuestion": {
     "optionOrientation": "vertical",
     "selectedMcqType": "passage",

@@ -1,0 +1,936 @@
+{
+  "sections": [
+    {
+      "id": "15d13fae-3a8f-46ea-9a79-7dd212fcade2",
+      "title": {
+        "root": {
+          "type": "root",
+          "version": 1,
+          "children": [
+            {
+              "tag": "h3",
+              "type": "heading",
+              "version": 1,
+              "children": [
+                {
+                  "text": "1. Rich Text & Layouts",
+                  "type": "text",
+                  "version": 1
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "content": [
+        {
+          "id": "block-1766509482063",
+          "type": "lexicalRichTextBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "columns",
+                  "columns": 2,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "text": "This block is in a 2 column layout. This is the left column which is 70%",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ]
+                        }
+                      ],
+                      "columnIndex": 0,
+                      "verticalAlign": "top"
+                    },
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "text": "This block is in a 2 column layout. This is the right column which is 30%",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ]
+                        }
+                      ],
+                      "columnIndex": 1,
+                      "verticalAlign": "top"
+                    }
+                  ],
+                  "columnWidths": [
+                    "70%",
+                    "30%"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "block-1766509618794",
+          "type": "lexicalRichTextBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "columns",
+                  "columns": 2,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "text": "This is a 2 column layout with text in the left column and image in the right",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ]
+                        }
+                      ],
+                      "columnIndex": 0,
+                      "verticalAlign": "top"
+                    },
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "src": "undefined",
+                              "type": "image",
+                              "width": 400,
+                              "height": 175,
+                              "altText": "US G3 S U2 L2 L1 image 006",
+                              "version": 1
+                            }
+                          ]
+                        }
+                      ],
+                      "columnIndex": 1,
+                      "verticalAlign": "top"
+                    }
+                  ],
+                  "columnWidths": [
+                    "1fr",
+                    "1fr"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "block-1766509702576",
+          "type": "lexicalRichTextBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "columns",
+                  "columns": 2,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "text": "This is a 2 column layout with bullet in the left column",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "ul",
+                          "type": "list",
+                          "start": 1,
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "listitem",
+                              "value": 1,
+                              "format": "",
+                              "indent": 0,
+                              "version": 1,
+                              "children": [
+                                {
+                                  "mode": "normal",
+                                  "text": "bullet point 1",
+                                  "type": "text",
+                                  "style": "",
+                                  "detail": 0,
+                                  "format": 0,
+                                  "version": 1
+                                }
+                              ],
+                              "direction": "ltr"
+                            },
+                            {
+                              "type": "listitem",
+                              "value": 2,
+                              "format": "",
+                              "indent": 0,
+                              "version": 1,
+                              "children": [
+                                {
+                                  "mode": "normal",
+                                  "text": "bullet point 2",
+                                  "type": "text",
+                                  "style": "",
+                                  "detail": 0,
+                                  "format": 0,
+                                  "version": 1
+                                }
+                              ],
+                              "direction": "ltr"
+                            }
+                          ],
+                          "listType": "bullet",
+                          "direction": "ltr"
+                        }
+                      ],
+                      "columnIndex": 0,
+                      "verticalAlign": "top"
+                    },
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "text": "This is a 2 column layout with numbered list in the right column",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "ol",
+                          "type": "list",
+                          "start": 1,
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "listitem",
+                              "value": 1,
+                              "format": "",
+                              "indent": 0,
+                              "version": 1,
+                              "children": [
+                                {
+                                  "mode": "normal",
+                                  "text": "numbered list item 1",
+                                  "type": "text",
+                                  "style": "",
+                                  "detail": 0,
+                                  "format": 0,
+                                  "version": 1
+                                }
+                              ],
+                              "direction": "ltr"
+                            },
+                            {
+                              "type": "listitem",
+                              "value": 2,
+                              "format": "",
+                              "indent": 0,
+                              "version": 1,
+                              "children": [
+                                {
+                                  "mode": "normal",
+                                  "text": "numbered list item 2",
+                                  "type": "text",
+                                  "style": "",
+                                  "detail": 0,
+                                  "format": 0,
+                                  "version": 1
+                                }
+                              ],
+                              "direction": "ltr"
+                            }
+                          ],
+                          "listType": "number",
+                          "direction": "ltr"
+                        }
+                      ],
+                      "columnIndex": 1,
+                      "verticalAlign": "top"
+                    }
+                  ],
+                  "columnWidths": [
+                    "1fr",
+                    "1fr"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "block-1766509944973",
+          "type": "lexicalRichTextBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "text": "this is 1 column layout with a table in it",
+                      "type": "text",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "grid": {
+                    "rows": 2,
+                    "columns": 2
+                  },
+                  "type": "table",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "tablerow",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "tablecell",
+                          "width": 188,
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "version": 1,
+                              "children": [
+                                {
+                                  "text": "X",
+                                  "type": "text",
+                                  "version": 1
+                                }
+                              ]
+                            }
+                          ],
+                          "headerState": "header"
+                        },
+                        {
+                          "type": "tablecell",
+                          "width": 188,
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "version": 1,
+                              "children": [
+                                {
+                                  "text": "Y",
+                                  "type": "text",
+                                  "version": 1
+                                }
+                              ]
+                            }
+                          ],
+                          "headerState": "header"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tablerow",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "tablecell",
+                          "width": 188,
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "version": 1,
+                              "children": [
+                                {
+                                  "text": "1",
+                                  "type": "text",
+                                  "version": 1
+                                }
+                              ]
+                            }
+                          ],
+                          "headerState": "normal"
+                        },
+                        {
+                          "type": "tablecell",
+                          "width": 188,
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "version": 1,
+                              "children": [
+                                {
+                                  "text": "2",
+                                  "type": "text",
+                                  "version": 1
+                                }
+                              ]
+                            }
+                          ],
+                          "headerState": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "block-1766510024259",
+          "type": "lexicalRichTextBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "columns",
+                  "columns": 2,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "tag": "h3",
+                          "type": "heading",
+                          "version": 1,
+                          "children": [
+                            {
+                              "text": "This is title 1 in left column",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "text": "This is text for left column centre aligned",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "text": "below is image for left column centre aligned",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "src": "undefined",
+                              "type": "image",
+                              "width": 400,
+                              "height": 175,
+                              "altText": "US G3 S U2 L2 L1 image 006",
+                              "version": 1
+                            }
+                          ]
+                        }
+                      ],
+                      "columnIndex": 0,
+                      "verticalAlign": "top"
+                    },
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "tag": "h3",
+                          "type": "heading",
+                          "version": 1,
+                          "children": [
+                            {
+                              "text": "This is title 1 in right column",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "text": "This is text for right column centre aligned",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "text": "below is image for right column centre aligned",
+                              "type": "text",
+                              "version": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "src": "undefined",
+                              "type": "image",
+                              "width": 400,
+                              "height": 175,
+                              "altText": "US G3 S U2 L2 L1 image 006",
+                              "version": 1
+                            }
+                          ]
+                        }
+                      ],
+                      "columnIndex": 1,
+                      "verticalAlign": "top"
+                    }
+                  ],
+                  "columnWidths": [
+                    "1fr",
+                    "1fr"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "6fc62fd8-c594-42c4-b45a-7dd6f9c2a1e8",
+      "title": {
+        "root": {
+          "type": "root",
+          "version": 1,
+          "children": [
+            {
+              "tag": "h3",
+              "type": "heading",
+              "version": 1,
+              "children": [
+                {
+                  "text": "MCQ Block",
+                  "type": "text",
+                  "version": 1
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "content": [
+        {
+          "id": "block-1766566428048",
+          "type": "mcqBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": []
+            }
+          },
+          "options": [
+            {
+              "id": "opt-1776278626071-0",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "text": "Option A Correct",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "image",
+                          "width": 400,
+                          "height": 175,
+                          "altText": "Option A Image",
+                          "mediaId": "",
+                          "version": 1,
+                          "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/US_G3_S_U2_L2_L1_image_006",
+                          "displayMode": "inline"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "isCorrect": true
+            },
+            {
+              "id": "opt-1776278626071-1",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "text": "Option B InCorrect",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "image",
+                          "width": 400,
+                          "height": 175,
+                          "altText": "Option B Image",
+                          "mediaId": "",
+                          "version": 1,
+                          "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/US_G3_S_U2_L2_L1_image_006",
+                          "displayMode": "inline"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "isCorrect": false
+            }
+          ],
+          "feedback": {
+            "general": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": []
+              }
+            },
+            "specific": {
+              "opt-1776278626071-0": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "text": "Option A Feedback",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "opt-1776278626071-1": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "text": "Option B Feedback",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "general_negative": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": []
+              }
+            },
+            "general_positive": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": []
+              }
+            }
+          },
+          "alignment": "horizontal",
+          "questionStem": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "text": "This is the MCQ block in one column layout with an image below. The options are aligned horizontally.",
+                      "type": "text",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "image",
+                      "width": 400,
+                      "height": 175,
+                      "altText": "This is the alt text for US G3 S U2 L2 L1 image 006",
+                      "mediaId": "",
+                      "version": 1,
+                      "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/US_G3_S_U2_L2_L1_image_006",
+                      "displayMode": "inline"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "correctOptionId": "opt-1776278626071-0",
+          "currentOptionIsCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "87e409f2-1298-4a80-9988-ed12590c9b53",
+      "title": {
+        "root": {
+          "type": "root",
+          "version": 1,
+          "children": [
+            {
+              "tag": "h3",
+              "type": "heading",
+              "version": 1,
+              "children": [
+                {
+                  "text": "FIB Block",
+                  "type": "text",
+                  "version": 1
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "content": [
+        {
+          "id": "block-1766572192582",
+          "type": "fillInBlankBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "text": "This is the Fill in the blank Question",
+                      "type": "text",
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "text": "The capital of France is ",
+                      "type": "text",
+                      "version": 1
+                    },
+                    {
+                      "type": "fitg",
+                      "width": 100,
+                      "answer": "Paris",
+                      "version": 1
+                    },
+                    {
+                      "text": " ",
+                      "type": "text",
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "image",
+                      "width": 400,
+                      "height": 175,
+                      "altText": "Question Image",
+                      "mediaId": "",
+                      "version": 1,
+                      "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/US_G3_S_U2_L2_L1_image_006",
+                      "displayMode": "inline"
+                    }
+                  ],
+                  "direction": "ltr",
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ]
+            }
+          },
+          "feedback": {
+            "correct": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "version": 1,
+                    "children": [
+                      {
+                        "text": "Your answer is correct",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "incorrect": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "version": 1,
+                    "children": [
+                      {
+                        "text": "Your answer is incorrect",
+                        "type": "text",
+                        "version": 1
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
