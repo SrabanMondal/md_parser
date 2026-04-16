@@ -18,8 +18,29 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const testDir = path.resolve(__dirname);
-const testMd = fs.readFileSync(path.join(testDir, 'test.md'), 'utf-8');
-const testJson = JSON.parse(fs.readFileSync(path.join(testDir, 'test.json'), 'utf-8'));
+
+// ═══════════════════════════════════════════════════════════
+//  FIXTURES
+// ═══════════════════════════════════════════════════════════
+
+interface Fixture {
+    name: string;
+    md: string;
+    json: any;
+}
+
+const fixtures: Fixture[] = [
+    {
+        name: 'test',
+        md: fs.readFileSync(path.join(testDir, 'test.md'), 'utf-8'),
+        json: JSON.parse(fs.readFileSync(path.join(testDir, 'test.json'), 'utf-8')),
+    },
+    {
+        name: 'test2',
+        md: fs.readFileSync(path.join(testDir, 'test2.md'), 'utf-8'),
+        json: JSON.parse(fs.readFileSync(path.join(testDir, 'test2.json'), 'utf-8')),
+    },
+];
 
 // ═══════════════════════════════════════════════════════════
 //  NORMALIZATION
@@ -145,6 +166,45 @@ function removeOptionalProps(obj: any): any {
 }
 
 /**
+ * Merge adjacent text nodes with the same format.
+ * Markdown cannot represent arbitrary splits between same-format text runs,
+ * so "text1" + "text2" (both format=0) round-trips as "text1text2".
+ * This normalization makes the comparison agnostic to such splits.
+ */
+function mergeAdjacentTextNodes(obj: any): any {
+    if (Array.isArray(obj)) return obj.map(mergeAdjacentTextNodes);
+    if (obj !== null && typeof obj === 'object') {
+        const result: any = {};
+        for (const [key, value] of Object.entries(obj)) {
+            if (key === 'children' && Array.isArray(value)) {
+                const merged: any[] = [];
+                for (const child of value) {
+                    const normalized = mergeAdjacentTextNodes(child);
+                    if (normalized.type === 'text' && merged.length > 0) {
+                        const prev = merged[merged.length - 1];
+                        if (prev.type === 'text' && (prev.format || 0) === (normalized.format || 0)) {
+                            prev.text = (prev.text || '') + (normalized.text || '');
+                            continue;
+                        }
+                    }
+                    merged.push(normalized);
+                }
+                result[key] = merged;
+            } else {
+                result[key] = mergeAdjacentTextNodes(value);
+            }
+        }
+        return result;
+    }
+    return obj;
+}
+
+/** Apply all normalization steps to a JSON structure. */
+function normalize(json: any): any {
+    return mergeAdjacentTextNodes(removeOptionalProps(normalizeHeaderState(normalizeIds(json))));
+}
+
+/**
  * Normalize markdown for comparison:
  *  - Unify line endings
  *  - Trim trailing whitespace per line
@@ -226,123 +286,133 @@ function trunc(val: any): string {
 }
 
 // ═══════════════════════════════════════════════════════════
-//  TESTS
+//  TEST RUNNER
 // ═══════════════════════════════════════════════════════════
 
 let totalPass = 0;
 let totalFail = 0;
+let testNumber = 0;
+
+/**
+ * Run all three round-trip tests for a single fixture.
+ * Returns the number of failures for that fixture.
+ */
+function runFixture(fixture: Fixture): number {
+    let pass = 0;
+    let fail = 0;
+
+    console.log(`\n╔═══ Fixture: ${fixture.name} ${'═'.repeat(40 - fixture.name.length)}╗`);
+
+    // ─── A. MD Round-Trip Stability ────────────────────────
+    testNumber++;
+    console.log(`\n─── Test ${testNumber}: [${fixture.name}] MD Round-Trip (MD → JSON₁ → MD₁ → JSON₂) ───\n`);
+
+    const parser1 = new MarkdownParser(fixture.md);
+    const json1 = parser1.parse();
+
+    const generator1 = new MarkdownGenerator(json1);
+    const md1 = generator1.generate();
+
+    const parser2 = new MarkdownParser(md1);
+    const json2 = parser2.parse();
+
+    const diffs1 = deepCompare(normalize(json1), normalize(json2));
+
+    if (diffs1.length === 0) {
+        console.log('  ✅ PASS: MD round-trip is stable (JSON₁ ≈ JSON₂)');
+        pass++;
+    } else {
+        console.log(`  ❌ FAIL: ${diffs1.length} differences found`);
+        diffs1.slice(0, 20).forEach(d => console.log(`    ${d}`));
+        if (diffs1.length > 20) console.log(`    ... and ${diffs1.length - 20} more`);
+        fail++;
+    }
+
+    // ─── B. JSON Round-Trip ───────────────────────────────
+    testNumber++;
+    console.log(`\n─── Test ${testNumber}: [${fixture.name}] JSON Round-Trip (JSON → MD → JSON₂) ───\n`);
+
+    const generator2 = new MarkdownGenerator(fixture.json);
+    const md2 = generator2.generate();
+
+    const parser3 = new MarkdownParser(md2);
+    const json3 = parser3.parse();
+
+    const diffs2 = deepCompare(normalize(fixture.json), normalize(json3));
+
+    if (diffs2.length === 0) {
+        console.log('  ✅ PASS: JSON round-trip preserves all data');
+        pass++;
+    } else {
+        console.log(`  ❌ FAIL: ${diffs2.length} differences found`);
+        diffs2.slice(0, 30).forEach(d => console.log(`    ${d}`));
+        if (diffs2.length > 30) console.log(`    ... and ${diffs2.length - 30} more`);
+        fail++;
+    }
+
+    // ─── C. MD Regeneration Stability ─────────────────────
+    testNumber++;
+    console.log(`\n─── Test ${testNumber}: [${fixture.name}] MD Regeneration (MD₁ → JSON₂ → MD₂ === MD₁) ───\n`);
+
+    const generator3 = new MarkdownGenerator(json2);
+    const md3 = generator3.generate();
+
+    const normalizedMd1 = normalizeMd(md1);
+    const normalizedMd3 = normalizeMd(md3);
+
+    if (normalizedMd1 === normalizedMd3) {
+        console.log('  ✅ PASS: MD regeneration is stable (MD₁ === MD₂)');
+        pass++;
+    } else {
+        console.log('  ❌ FAIL: MD regeneration differs');
+        const lines1 = normalizedMd1.split('\n');
+        const lines3 = normalizedMd3.split('\n');
+        let diffCount = 0;
+        for (let i = 0; i < Math.max(lines1.length, lines3.length); i++) {
+            if (lines1[i] !== lines3[i]) {
+                console.log(`    Line ${i + 1}:`);
+                console.log(`      Expected: ${JSON.stringify(lines1[i])}`);
+                console.log(`      Got:      ${JSON.stringify(lines3[i])}`);
+                diffCount++;
+                if (diffCount >= 10) {
+                    console.log('    ... and more');
+                    break;
+                }
+            }
+        }
+        fail++;
+    }
+
+    // ─── Write output files for manual inspection ─────────
+    const prefix = fixture.name;
+    fs.writeFileSync(path.join(testDir, `${prefix}.generated.md`), md1, 'utf-8');
+    fs.writeFileSync(path.join(testDir, `${prefix}.generated.json`), JSON.stringify(json1, null, 2), 'utf-8');
+    fs.writeFileSync(path.join(testDir, `${prefix}.roundtrip.md`), md2, 'utf-8');
+    fs.writeFileSync(path.join(testDir, `${prefix}.roundtrip.json`), JSON.stringify(json3, null, 2), 'utf-8');
+
+    console.log(`\n  Output: ${prefix}.generated.md / .json, ${prefix}.roundtrip.md / .json`);
+    console.log(`╚${'═'.repeat(47)}╝`);
+
+    totalPass += pass;
+    totalFail += fail;
+    return fail;
+}
+
+// ═══════════════════════════════════════════════════════════
+//  RUN ALL FIXTURES
+// ═══════════════════════════════════════════════════════════
 
 console.log('═══════════════════════════════════════════════════════');
 console.log('  ROUND-TRIP TEST SUITE');
 console.log('═══════════════════════════════════════════════════════');
 
-// ─── Test 1: MD Round-Trip Stability ───────────────────────
-console.log('\n─── Test 1: MD Round-Trip (MD → JSON₁ → MD₁ → JSON₂) ───\n');
-
-const parser1 = new MarkdownParser(testMd);
-const json1 = parser1.parse();
-
-const generator1 = new MarkdownGenerator(json1);
-const md1 = generator1.generate();
-
-const parser2 = new MarkdownParser(md1);
-const json2 = parser2.parse();
-
-const normalized1 = removeOptionalProps(normalizeHeaderState(normalizeIds(json1)));
-const normalized2 = removeOptionalProps(normalizeHeaderState(normalizeIds(json2)));
-
-const diffs1 = deepCompare(normalized1, normalized2);
-
-if (diffs1.length === 0) {
-    console.log('  ✅ PASS: MD round-trip is stable (JSON₁ ≈ JSON₂)');
-    totalPass++;
-} else {
-    console.log(`  ❌ FAIL: ${diffs1.length} differences found`);
-    diffs1.slice(0, 20).forEach(d => console.log(`    ${d}`));
-    if (diffs1.length > 20) console.log(`    ... and ${diffs1.length - 20} more`);
-    totalFail++;
+for (const fixture of fixtures) {
+    runFixture(fixture);
 }
-
-// ─── Test 2: JSON Round-Trip ───────────────────────────────
-console.log('\n─── Test 2: JSON Round-Trip (test.json → MD → JSON₂) ───\n');
-
-const generator2 = new MarkdownGenerator(testJson);
-const md2 = generator2.generate();
-
-const parser3 = new MarkdownParser(md2);
-const json3 = parser3.parse();
-
-const normalizedOriginal = removeOptionalProps(normalizeHeaderState(normalizeIds(testJson)));
-const normalizedRoundTripped = removeOptionalProps(normalizeHeaderState(normalizeIds(json3)));
-
-const diffs2 = deepCompare(normalizedOriginal, normalizedRoundTripped);
-
-if (diffs2.length === 0) {
-    console.log('  ✅ PASS: JSON round-trip preserves all data');
-    totalPass++;
-} else {
-    console.log(`  ❌ FAIL: ${diffs2.length} differences found`);
-    diffs2.slice(0, 30).forEach(d => console.log(`    ${d}`));
-    if (diffs2.length > 30) console.log(`    ... and ${diffs2.length - 30} more`);
-    totalFail++;
-}
-
-// ─── Test 3: MD Regeneration Stability ─────────────────────
-console.log('\n─── Test 3: MD Regeneration (MD₁ → JSON₂ → MD₂ === MD₁) ───\n');
-
-const generator3 = new MarkdownGenerator(json2);
-const md3 = generator3.generate();
-
-const normalizedMd1 = normalizeMd(md1);
-const normalizedMd3 = normalizeMd(md3);
-
-if (normalizedMd1 === normalizedMd3) {
-    console.log('  ✅ PASS: MD regeneration is stable (MD₁ === MD₂)');
-    totalPass++;
-} else {
-    console.log('  ❌ FAIL: MD regeneration differs');
-    const lines1 = normalizedMd1.split('\n');
-    const lines3 = normalizedMd3.split('\n');
-    let diffCount = 0;
-    for (let i = 0; i < Math.max(lines1.length, lines3.length); i++) {
-        if (lines1[i] !== lines3[i]) {
-            console.log(`    Line ${i + 1}:`);
-            console.log(`      Expected: ${JSON.stringify(lines1[i])}`);
-            console.log(`      Got:      ${JSON.stringify(lines3[i])}`);
-            diffCount++;
-            if (diffCount >= 10) {
-                console.log('    ... and more');
-                break;
-            }
-        }
-    }
-    totalFail++;
-}
-
-// ─── Write output files for manual inspection ──────────────
-console.log('\n─── Output Files ───\n');
-
-fs.writeFileSync(path.join(testDir, 'generated.md'), md1, 'utf-8');
-fs.writeFileSync(
-    path.join(testDir, 'generated.json'),
-    JSON.stringify(json1, null, 2),
-    'utf-8'
-);
-fs.writeFileSync(
-    path.join(testDir, 'roundtrip.json'),
-    JSON.stringify(json3, null, 2),
-    'utf-8'
-);
-fs.writeFileSync(path.join(testDir, 'roundtrip.md'), md2, 'utf-8');
-
-console.log('  → tests/course/generated.md    (MD from parsing test.md)');
-console.log('  → tests/course/generated.json  (JSON from parsing test.md)');
-console.log('  → tests/course/roundtrip.md    (MD from test.json)');
-console.log('  → tests/course/roundtrip.json  (JSON from roundtripping test.json)');
 
 // ─── Summary ───────────────────────────────────────────────
 console.log('\n═══════════════════════════════════════════════════════');
-console.log(`  RESULTS: ${totalPass} passed, ${totalFail} failed`);
+console.log(`  RESULTS: ${totalPass} passed, ${totalFail} failed (${fixtures.length} fixtures × 3 tests)`);
 if (totalFail === 0) {
     console.log('  ✅ ALL TESTS PASSED');
 } else {

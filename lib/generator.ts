@@ -316,9 +316,10 @@ export class MarkdownGenerator {
      *     ::: drop-zone
      *       <zone text>
      *       ::: correct-items
-     *       drag-item-id-or-index
+     *       drag-item-index (canonical)
      *       :::
-     *     :::
+     *       (no extra ::: for drop-zone after correct-items)
+     *     ::: drop-zone / :::    (only if zone has no correct-items)
      *   :::
      *   ::: drag-drop-feedback-correct / :::
      *   ::: drag-drop-feedback-incorrect / :::
@@ -326,6 +327,14 @@ export class MarkdownGenerator {
     private generateDragDropBlock(block: ContentBlock): string {
         const header = this.generateBlockHeader(block);
         const parts: string[] = [header, ''];
+        const dragItems = Array.isArray(block.dragItems) ? block.dragItems : [];
+        const dragItemIndexById = new Map<string, number>();
+
+        dragItems.forEach((item: any, index: number) => {
+            if (typeof item?.id === 'string' && item.id.trim() !== '') {
+                dragItemIndexById.set(item.id, index);
+            }
+        });
 
         // Description
         if (block.description?.root?.children?.length > 0) {
@@ -336,9 +345,9 @@ export class MarkdownGenerator {
         }
 
         // Drag items
-        if (block.dragItems?.length > 0) {
+        if (dragItems.length > 0) {
             parts.push('::: drag-items');
-            for (const item of block.dragItems) {
+            for (const item of dragItems) {
                 parts.push('::: drag-item');
                 if (item.text?.root?.children?.length > 0) {
                     parts.push(this.generateContentFromRoot(item.text.root));
@@ -357,15 +366,50 @@ export class MarkdownGenerator {
                 if (zone.text?.root?.children?.length > 0) {
                     parts.push(this.generateContentFromRoot(zone.text.root));
                 }
-                // Correct items
-                if (zone.correctItemId?.length > 0) {
-                    parts.push('::: correct-items');
-                    for (const itemId of zone.correctItemId) {
-                        parts.push(itemId);
+
+                const rawCorrectItems = Array.isArray(zone.correctItemId)
+                    ? zone.correctItemId
+                    : (zone.correctItemId !== undefined && zone.correctItemId !== null && zone.correctItemId !== '')
+                        ? [zone.correctItemId]
+                        : [];
+
+                const emittedCorrectItems: string[] = [];
+
+                for (const rawItem of rawCorrectItems) {
+                    let index: number | null = null;
+
+                    if (typeof rawItem === 'number' && Number.isInteger(rawItem)) {
+                        index = rawItem;
+                    } else if (typeof rawItem === 'string') {
+                        const trimmed = rawItem.trim();
+
+                        if (/^\d+$/.test(trimmed)) {
+                            index = Number.parseInt(trimmed, 10);
+                        } else if (dragItemIndexById.has(trimmed)) {
+                            index = dragItemIndexById.get(trimmed)!;
+                        } else if (trimmed !== '') {
+                            // Preserve unknown IDs verbatim as a best-effort fallback.
+                            emittedCorrectItems.push(trimmed);
+                        }
                     }
+
+                    if (index !== null && index >= 0 && index < dragItems.length) {
+                        emittedCorrectItems.push(String(index));
+                    }
+                }
+
+                // Correct items
+                if (emittedCorrectItems.length > 0) {
+                    parts.push('::: correct-items');
+                    for (const itemRef of emittedCorrectItems) {
+                        parts.push(itemRef);
+                    }
+                    // Parser treats this close marker as end of both correct-items and drop-zone.
+                    parts.push(':::');
+                } else {
+                    // If no correct-items block exists, drop-zone needs an explicit close.
                     parts.push(':::');
                 }
-                parts.push(':::');
             }
             parts.push(':::');
             parts.push('');

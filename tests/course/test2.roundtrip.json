@@ -1,0 +1,1984 @@
+{
+  "sections": [
+    {
+      "id": "5c03b70a-a9a6-45cc-bc33-695e5e895b13",
+      "title": {
+        "root": {
+          "type": "root",
+          "version": 1,
+          "children": [
+            {
+              "type": "heading",
+              "tag": "h3",
+              "version": 1,
+              "children": [
+                {
+                  "type": "text",
+                  "version": 1,
+                  "text": "1. Decimal Units and Conversions"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "content": [
+        {
+          "id": "IN_CB_G6_M_08_block_003",
+          "type": "lexicalRichTextBlock",
+          "title": "Decimal Units and Conversions",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "columns",
+                  "version": 1,
+                  "columns": 2,
+                  "columnWidths": [
+                    "70%",
+                    "30%"
+                  ],
+                  "children": [
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "Diya is measuring a grain of rice for her science project. Since it is too small to be measured in whole centimeters, she uses the millimeter (mm) markings. The grain measures "
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "5 mm",
+                              "format": 1
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "We know that "
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "10 mm = 1 cm",
+                              "format": 1
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": ". This means 1 mm is "
+                            },
+                            {
+                              "type": "equation",
+                              "version": 1,
+                              "equation": "\\dfrac{1}{10}",
+                              "inline": true
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": " of a centimeter. In decimal form, we write this as "
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "0.1 cm",
+                              "format": 1
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "So, the 5 mm grain is 5 tenths of a centimeter:"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "5 "
+                            },
+                            {
+                              "type": "equation",
+                              "version": 1,
+                              "equation": "\\text{ mm}",
+                              "inline": true
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": " = 0.5 "
+                            },
+                            {
+                              "type": "equation",
+                              "version": 1,
+                              "equation": "\\text{ cm}",
+                              "inline": true
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "."
+                            }
+                          ]
+                        }
+                      ],
+                      "columnIndex": 0,
+                      "verticalAlign": "top"
+                    },
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "latex",
+                          "version": 1,
+                          "code": "\\documentclass[tikz,border=10pt]{standalone}\n\\usepackage{fontspec}\n\\usepackage{tikz}\n\\usetikzlibrary{positioning, calc}\n\\usepackage{xcolor}\n\\usepackage{bm}\n\n\\setmainfont{Latin Modern Roman}\n\n\\definecolor{K5_Indigo}{HTML}{2b0c81}\n\\definecolor{K5_Yellow}{HTML}{fff220}\n\\definecolor{K5_White}{HTML}{ffffff}\n\\definecolor{K5_Gold}{HTML}{ffc34c}\n\n\\begin{document}\n    \\begin{tikzpicture}[\n        font=\\sffamily,\n        ruler_style/.style={fill=K5_White, draw=K5_Indigo, line width=1.5pt},\n        tick_style/.style={draw=K5_Indigo, line width=1pt},\n        grain_style/.style={fill=K5_Gold!40, draw=K5_Indigo, line width=0.5pt, rounded corners=3pt}\n    ]\n        % Ruler Base\n        \\draw[ruler_style] (0,0) rectangle (10, 2);\n        \n        % Ticks for 1 cm (divided into 10 mm)\n        % Scale: 10 units in TikZ = 1 cm on ruler\n        \\foreach \\x in {0,1,...,10} {\n            \\pgfmathsetmacro{\\tickheight}{\\x == 0 || \\x == 10 ? 1 : (\\x == 5 ? 0.7 : 0.4)}\n            \\draw[tick_style] (\\x, 2) -- (\\x, 2-\\tickheight);\n            \\ifnum\\x=0 \\node[below, text=K5_Indigo] at (\\x, 1) {\\textbf{0}}; \\fi\n            \\ifnum\\x=10 \\node[below, text=K5_Indigo] at (\\x, 1) {\\textbf{1}}; \\fi\n        }\n        \n        % Labels\n        \\node[text=K5_Indigo, font=\\footnotesize] at (5, 0.4) {cm};\n\n        % Rice Grain from 0 to 5mm\n        \\draw[grain_style] (0.2, 2.2) .. controls (2.5, 2.6) and (3.5, 2.6) .. (5, 2.2)\n                            .. controls (3.5, 1.8) and (2.5, 1.8) .. (0.2, 2.2);\n        \n        % Annotations\n        \\draw[<->, draw=K5_Indigo, line width=1pt] (0, 2.8) -- (5, 2.8) node[midway, above] {5 mm};\n        \n    \\end{tikzpicture}\n\\end{document}"
+                        }
+                      ],
+                      "columnIndex": 1,
+                      "verticalAlign": "top"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "IN_CB_G6_M_08_block_004",
+          "type": "lexicalRichTextBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "columns",
+                  "version": 1,
+                  "columns": 2,
+                  "columnWidths": [
+                    "70%",
+                    "30%"
+                  ],
+                  "children": [
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "Think about your pocket money. You know that "
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "100 Paise = ₹1",
+                              "format": 1
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "This means 1 Paisa is one-hundredth "
+                            },
+                            {
+                              "type": "equation",
+                              "version": 1,
+                              "equation": "\\dfrac{1}{100}",
+                              "inline": true
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": " of a Rupee. In decimal form, we write this as "
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "₹0.01",
+                              "format": 1
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "If you have 75 Paise, you have 75 hundredths of a Rupee."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "75 "
+                            },
+                            {
+                              "type": "equation",
+                              "version": 1,
+                              "equation": "\\text{ p}",
+                              "inline": true
+                            },
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": " = ₹0.75."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "table",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "tablerow",
+                              "version": 1,
+                              "children": [
+                                {
+                                  "type": "tablecell",
+                                  "version": 1,
+                                  "headerState": 1,
+                                  "width": 188,
+                                  "children": [
+                                    {
+                                      "type": "paragraph",
+                                      "version": 1,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "version": 1,
+                                          "text": "X"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "tablecell",
+                                  "version": 1,
+                                  "headerState": 1,
+                                  "width": 188,
+                                  "children": [
+                                    {
+                                      "type": "paragraph",
+                                      "version": 1,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "version": 1,
+                                          "text": "Y"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "tablerow",
+                              "version": 1,
+                              "children": [
+                                {
+                                  "type": "tablecell",
+                                  "version": 1,
+                                  "headerState": 0,
+                                  "width": 188,
+                                  "children": [
+                                    {
+                                      "type": "paragraph",
+                                      "version": 1,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "version": 1,
+                                          "text": "1"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "tablecell",
+                                  "version": 1,
+                                  "headerState": 0,
+                                  "width": 188,
+                                  "children": [
+                                    {
+                                      "type": "paragraph",
+                                      "version": 1,
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "version": 1,
+                                          "text": "2"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "grid": {
+                            "rows": 2,
+                            "columns": 2
+                          }
+                        }
+                      ],
+                      "columnIndex": 0,
+                      "verticalAlign": "top"
+                    },
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "image",
+                              "version": 1,
+                              "src": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_002",
+                              "altText": "A visual comparison showing a large container filled with 100 small copper-colored 1-paisa coins next to a single shiny silver 1-rupee coin, illustrating the ratio of 100:1.",
+                              "width": 400,
+                              "height": 175
+                            }
+                          ]
+                        }
+                      ],
+                      "columnIndex": 1,
+                      "verticalAlign": "top"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "IN_CB_G6_M_08_block_005",
+          "type": "slideShowBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": []
+            }
+          },
+          "slides": [
+            {
+              "id": "slide-1776364310129-0",
+              "content": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "heading",
+                      "tag": "h3",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Length: Tenths"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "When converting millimeters to centimeters, we divide by 10 because 10 mm = 1 cm. This represents the "
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Tenths",
+                          "format": 1
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": " place."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "latex",
+                          "version": 1,
+                          "code": "\\documentclass[tikz,border=10pt]{standalone}\n\\usepackage{fontspec}\n\\usepackage{tikz}\n\\usetikzlibrary{arrows.meta, positioning}\n\\usepackage{xcolor}\n\n\\definecolor{K5_Indigo}{HTML}{2b0c81}\n\\definecolor{K5_Blue}{HTML}{539df7}\n\n\\begin{document}\n    \\begin{tikzpicture}[\n        node distance=3cm,\n        box/.style={draw=K5_Indigo, line width=2pt, minimum width=2.5cm, minimum height=1.5cm, font=\\Huge\\bfseries, text=K5_Indigo, rounded corners=5pt},\n        arrow/.style={-Stealth, draw=K5_Blue, line width=3pt}\n    ]\n        \\node[box] (mm) {mm};\n        \\node[box, right=of mm] (cm) {cm};\n        \\draw[arrow] (mm) -- (cm) node[midway, above=0.2cm, text=K5_Indigo, font=\\Large\\bfseries] {Divide by 10};\n    \\end{tikzpicture}\n\\end{document}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "slide-1776364310129-1",
+              "content": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "heading",
+                      "tag": "h3",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Money: Hundredths"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "When converting Paise to Rupees, we divide by 100 because 100 p = ₹1. This represents the "
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Hundredths",
+                          "format": 1
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": " place."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "table",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "tablerow",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "tablecell",
+                              "version": 1,
+                              "headerState": 1,
+                              "width": 188,
+                              "children": [
+                                {
+                                  "type": "paragraph",
+                                  "version": 1,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "version": 1,
+                                      "text": "X"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "tablecell",
+                              "version": 1,
+                              "headerState": 1,
+                              "width": 188,
+                              "children": [
+                                {
+                                  "type": "paragraph",
+                                  "version": 1,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "version": 1,
+                                      "text": "Y"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tablerow",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "tablecell",
+                              "version": 1,
+                              "headerState": 0,
+                              "width": 188,
+                              "children": [
+                                {
+                                  "type": "paragraph",
+                                  "version": 1,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "version": 1,
+                                      "text": "1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "tablecell",
+                              "version": 1,
+                              "headerState": 0,
+                              "width": 188,
+                              "children": [
+                                {
+                                  "type": "paragraph",
+                                  "version": 1,
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "version": 1,
+                                      "text": "2"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "grid": {
+                        "rows": 2,
+                        "columns": 2
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "slide-1776364310129-2",
+              "content": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "heading",
+                      "tag": "h3",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Weight: Thousandths"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "When converting grams to kilograms, we divide by 1000 because 1000 g = 1 kg. This represents the "
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Thousandths",
+                          "format": 1
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": " place."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "columns",
+                      "version": 1,
+                      "columns": 2,
+                      "columnWidths": [
+                        "70%",
+                        "30%"
+                      ],
+                      "children": [
+                        {
+                          "type": "column",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "version": 1,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": "Diya is measuring a grain of rice for her science project. Since it is too small to be measured in whole centimeters, she uses the millimeter (mm) markings. The grain measures "
+                                },
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": "5 mm",
+                                  "format": 1
+                                },
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": "."
+                                }
+                              ]
+                            },
+                            {
+                              "type": "paragraph",
+                              "version": 1,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": "We know that "
+                                },
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": "10 mm = 1 cm",
+                                  "format": 1
+                                },
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": ". This means 1 mm is "
+                                },
+                                {
+                                  "type": "equation",
+                                  "version": 1,
+                                  "equation": "\\dfrac{1}{10}",
+                                  "inline": true
+                                },
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": " of a centimeter. In decimal form, we write this as "
+                                },
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": "0.1 cm",
+                                  "format": 1
+                                },
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": "."
+                                }
+                              ]
+                            },
+                            {
+                              "type": "paragraph",
+                              "version": 1,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": "So, the 5 mm grain is 5 tenths of a centimeter:"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "paragraph",
+                              "version": 1,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": "5 "
+                                },
+                                {
+                                  "type": "equation",
+                                  "version": 1,
+                                  "equation": "\\text{ mm}",
+                                  "inline": true
+                                },
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": " = 0.5 "
+                                },
+                                {
+                                  "type": "equation",
+                                  "version": 1,
+                                  "equation": "\\text{ cm}",
+                                  "inline": true
+                                },
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": "."
+                                }
+                              ]
+                            }
+                          ],
+                          "columnIndex": 0,
+                          "verticalAlign": "top"
+                        },
+                        {
+                          "type": "column",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "version": 1,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "version": 1,
+                                  "text": "This is 2nd column"
+                                }
+                              ]
+                            }
+                          ],
+                          "columnIndex": 1,
+                          "verticalAlign": "top"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "description": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "All conversions between smaller units and larger units follow the same place value pattern. Observe how the decimal moves based on the unit relationship."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "IN_CB_G6_M_08_block_006",
+          "type": "lexicalRichTextBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "heading",
+                  "tag": "h3",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "The Conversion Key"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "You don't need to memorize every table if you remember the logic of zeros. The number of zeros in the conversion factor tells you the number of decimal places:"
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "version": 1,
+                  "listType": "bullet",
+                  "tag": "ul",
+                  "children": [
+                    {
+                      "type": "listitem",
+                      "version": 1,
+                      "format": "",
+                      "indent": 0,
+                      "value": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "  10 units = 1 larger unit: Divide by 10 ",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\rightarrow",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": " 1 decimal place (Tenths).",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        }
+                      ],
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "listitem",
+                      "version": 1,
+                      "format": "",
+                      "indent": 0,
+                      "value": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "  100 units = 1 larger unit: Divide by 100 ",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\rightarrow",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": " 2 decimal places (Hundredths).",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        }
+                      ],
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "listitem",
+                      "version": 1,
+                      "format": "",
+                      "indent": 0,
+                      "value": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "  1000 units = 1 larger unit: Divide by 1000 ",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\rightarrow",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": " 3 decimal places (Thousandths).",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        }
+                      ],
+                      "direction": "ltr"
+                    }
+                  ],
+                  "start": 1,
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "IN_CB_G6_M_08_block_008",
+          "type": "mcqBlock",
+          "title": "Check Your Understanding",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": []
+            }
+          },
+          "questionStem": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "Which of the following correctly represents "
+                    },
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "8 Paise",
+                      "format": 1
+                    },
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": " in Rupees? ("
+                    },
+                    {
+                      "type": "equation",
+                      "version": 1,
+                      "equation": "\\dfrac{80}{100}",
+                      "inline": true
+                    },
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": " or "
+                    },
+                    {
+                      "type": "equation",
+                      "version": 1,
+                      "equation": "\\dfrac{8}{10}",
+                      "inline": true
+                    },
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "). Image "
+                    },
+                    {
+                      "type": "image",
+                      "version": 1,
+                      "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_002",
+                      "altText": "A visual comparison showing a large container filled with 100 small copper-colored 1-paisa coins next to a single shiny silver 1-rupee coin, illustrating the ratio of 100:1.",
+                      "mediaId": "",
+                      "width": 400,
+                      "height": 175,
+                      "displayMode": "inline"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "options": [
+            {
+              "id": "opt-1776364310130-0",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "₹ 0.08 ("
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\dfrac{80}{100}",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": " or "
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\dfrac{8}{10}",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": ")."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "isCorrect": true
+            },
+            {
+              "id": "opt-1776364310130-1",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "image",
+                          "version": 1,
+                          "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_002",
+                          "altText": "A visual comparison showing a large container filled with 100 small copper-colored 1-paisa coins next to a single shiny silver 1-rupee coin, illustrating the ratio of 100:1.",
+                          "mediaId": "",
+                          "width": 400,
+                          "height": 175,
+                          "displayMode": "inline"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "isCorrect": false
+            },
+            {
+              "id": "opt-1776364310130-2",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "₹ 8.00 ("
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\dfrac{80}{100}",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": " or "
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\dfrac{8}{10}",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": ")."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "isCorrect": false
+            },
+            {
+              "id": "opt-1776364310130-3",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "₹ 0.008 "
+                        },
+                        {
+                          "type": "image",
+                          "version": 1,
+                          "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_002",
+                          "altText": "A visual comparison showing a large container filled with 100 small copper-colored 1-paisa coins next to a single shiny silver 1-rupee coin, illustrating the ratio of 100:1.",
+                          "mediaId": "",
+                          "width": 400,
+                          "height": 175,
+                          "displayMode": "inline"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "isCorrect": false
+            }
+          ],
+          "correctOptionId": "opt-1776364310130-0",
+          "feedback": {
+            "general": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": []
+              }
+            },
+            "general_positive": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": []
+              }
+            },
+            "general_negative": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": []
+              }
+            },
+            "specific": {
+              "opt-1776364310130-0": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Correct. Since 100 Paise = ₹1, 8 Paise is "
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\dfrac{8}{100}",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": ", which is 0.08."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "opt-1776364310130-1": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Incorrect. This represents 80 Paise ("
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\dfrac{80}{100}",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": " or "
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\dfrac{8}{10}",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": ")."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "opt-1776364310130-2": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Incorrect. This represents 8 full Rupees. "
+                        },
+                        {
+                          "type": "image",
+                          "version": 1,
+                          "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_002",
+                          "altText": "A visual comparison showing a large container filled with 100 small copper-colored 1-paisa coins next to a single shiny silver 1-rupee coin, illustrating the ratio of 100:1.",
+                          "mediaId": "",
+                          "width": 400,
+                          "height": 175,
+                          "displayMode": "inline"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "opt-1776364310130-3": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Incorrect. This would mean 1 Rupee = 1000 Paise."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "alignment": "vertical",
+          "currentOptionIsCorrect": false
+        },
+        {
+          "id": "IN_CB_G6_M_08_block_009",
+          "type": "dragDropBlock",
+          "title": "Check Your Understanding",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": []
+            }
+          },
+          "description": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "Match the unit conversion to the correct mathematical ("
+                    },
+                    {
+                      "type": "equation",
+                      "version": 1,
+                      "equation": "\\dfrac{80}{100}",
+                      "inline": true
+                    },
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": " or "
+                    },
+                    {
+                      "type": "equation",
+                      "version": 1,
+                      "equation": "\\dfrac{8}{10}",
+                      "inline": true
+                    },
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "). operation needed to change the smaller unit into the larger unit. "
+                    },
+                    {
+                      "type": "image",
+                      "version": 1,
+                      "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_002",
+                      "altText": "A visual comparison showing a large container filled with 100 small copper-colored 1-paisa coins next to a single shiny silver 1-rupee coin, illustrating the ratio of 100:1.",
+                      "mediaId": "",
+                      "width": 400,
+                      "height": 175,
+                      "displayMode": "inline"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "dragItems": [
+            {
+              "id": "drag-1776364310130-0",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "mm to cm Paise is "
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\dfrac{8}{100}",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": ","
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "drag-1776364310130-1",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "image",
+                          "version": 1,
+                          "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_002",
+                          "altText": "A visual comparison showing a large container filled with 100 small copper-colored 1-paisa coins next to a single shiny silver 1-rupee coin, illustrating the ratio of 100:1.",
+                          "mediaId": "",
+                          "width": 400,
+                          "height": 175,
+                          "displayMode": "inline"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "drag-1776364310130-2",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "g to kg "
+                        },
+                        {
+                          "type": "image",
+                          "version": 1,
+                          "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_002",
+                          "altText": "A visual comparison showing a large container filled with 100 small copper-colored 1-paisa coins next to a single shiny silver 1-rupee coin, illustrating the ratio of 100:1.",
+                          "mediaId": "",
+                          "width": 400,
+                          "height": 175,
+                          "displayMode": "inline"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "drag-1776364310130-3",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Paise to Rupee"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "dropAreas": [
+            {
+              "id": "drop-1776364310130-0",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Divide by 10 Paise is "
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\dfrac{8}{100}",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": ","
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "correctItemId": [
+                "drag-1776364310130-0"
+              ]
+            },
+            {
+              "id": "drop-1776364310130-1",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Divide by 100"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "correctItemId": [
+                "drag-1776364310130-1",
+                "drag-1776364310130-3"
+              ]
+            },
+            {
+              "id": "drop-1776364310130-2",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Divide by 1000"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "correctItemId": [
+                "drag-1776364310130-2"
+              ]
+            }
+          ],
+          "feedback": {
+            "correct": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Excellent! You have mastered the relationship between units and place value. Paise is "
+                      },
+                      {
+                        "type": "equation",
+                        "version": 1,
+                        "equation": "\\dfrac{8}{100}",
+                        "inline": true
+                      },
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": ","
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "incorrect": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Not quite. Remember: 10 mm = 1 cm, 100 cm = 1 m, 100 p = ₹1, and 1000 g = 1 kg. "
+                      },
+                      {
+                        "type": "image",
+                        "version": 1,
+                        "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_002",
+                        "altText": "A visual comparison showing a large container filled with 100 small copper-colored 1-paisa coins next to a single shiny silver 1-rupee coin, illustrating the ratio of 100:1.",
+                        "mediaId": "",
+                        "width": 400,
+                        "height": 175,
+                        "displayMode": "inline"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "ca996487-dd90-4ac0-8ea4-b9a31bd24f7f",
+      "title": {
+        "root": {
+          "type": "root",
+          "version": 1,
+          "children": [
+            {
+              "type": "heading",
+              "tag": "h3",
+              "version": 1,
+              "children": [
+                {
+                  "type": "text",
+                  "version": 1,
+                  "text": "2. Practice Problems"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "content": [
+        {
+          "id": "IN_CB_G6_M_08_block_028",
+          "type": "mcqBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": []
+            }
+          },
+          "isMAMCQ": true,
+          "questionStem": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "Look at the railway delay board below. Select "
+                    },
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "ALL",
+                      "format": 1
+                    },
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": " the correct statements."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "image",
+                      "version": 1,
+                      "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_003",
+                      "altText": "A digital railway delay board showing Train A delayed by 4.5h, Train B delayed by 4.25h, and Train C delayed by 4.05h.",
+                      "mediaId": "",
+                      "width": 400,
+                      "height": 175,
+                      "displayMode": "inline"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "options": [
+            {
+              "id": "opt-1776364310130-0",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Train C has the smallest delay. Paise is "
+                        },
+                        {
+                          "type": "equation",
+                          "version": 1,
+                          "equation": "\\dfrac{8}{100}",
+                          "inline": true
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": ","
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "isCorrect": true
+            },
+            {
+              "id": "opt-1776364310130-1",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Train A has the largest delay. "
+                        },
+                        {
+                          "type": "image",
+                          "version": 1,
+                          "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_002",
+                          "altText": "A visual comparison showing a large container filled with 100 small copper-colored 1-paisa coins next to a single shiny silver 1-rupee coin, illustrating the ratio of 100:1.",
+                          "mediaId": "",
+                          "width": 400,
+                          "height": 175,
+                          "displayMode": "inline"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "isCorrect": true
+            },
+            {
+              "id": "opt-1776364310130-2",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Train B is delayed more than Train A."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "isCorrect": false
+            },
+            {
+              "id": "opt-1776364310130-3",
+              "text": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "4.5 hours is the same as 4 hours 5 minutes."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "isCorrect": false
+            }
+          ],
+          "correctOptionId": "",
+          "feedback": {
+            "general": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": []
+              }
+            },
+            "general_positive": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Correct! 4.5 (or 4.50) is the largest delay, and 4.05 is the smallest. "
+                      },
+                      {
+                        "type": "image",
+                        "version": 1,
+                        "imageUrl": "https://d2lhxh95t9lwdp.cloudfront.net/IN_CB_G6_M_08_image_002",
+                        "altText": "A visual comparison showing a large container filled with 100 small copper-colored 1-paisa coins next to a single shiny silver 1-rupee coin, illustrating the ratio of 100:1.",
+                        "mediaId": "",
+                        "width": 400,
+                        "height": 175,
+                        "displayMode": "inline"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "general_negative": {
+              "root": {
+                "type": "root",
+                "version": 1,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "version": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Wait. 4.5 is greater than 4.25. Also, 4.5 hours is 4 and a half hours (4 hours 30 mins), not 4 hours 5 mins. ("
+                      },
+                      {
+                        "type": "equation",
+                        "version": 1,
+                        "equation": "\\dfrac{80}{100}",
+                        "inline": true
+                      },
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": " or "
+                      },
+                      {
+                        "type": "equation",
+                        "version": 1,
+                        "equation": "\\dfrac{8}{10}",
+                        "inline": true
+                      },
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": ")."
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "specific": {}
+          },
+          "alignment": "vertical",
+          "currentMAMCQOptionIsCorrect": false
+        }
+      ]
+    }
+  ]
+}
