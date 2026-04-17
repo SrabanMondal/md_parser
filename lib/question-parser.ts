@@ -754,6 +754,25 @@ export class QuestionParser {
             }
         }
 
+        const applyAutomaticMAMCQDetection = () => {
+            if (!question.mcqQuestion || !Array.isArray(question.mcqQuestion.options)) return;
+
+            const currentType = (question.mcqQuestion.selectedMcqType || '').toLowerCase();
+            if (currentType !== 'default') return;
+
+            // Explicit rule: only options marked [correct] become isCorrectAnswer=true.
+            const explicitCorrectCount = question.mcqQuestion.options.reduce(
+                (count, option) => count + (option?.isCorrectAnswer === true ? 1 : 0),
+                0
+            );
+
+            if (explicitCorrectCount > 1) {
+                question.mcqQuestion.selectedMcqType = 'mamcq' as any;
+            }
+        };
+
+        applyAutomaticMAMCQDetection();
+
         return question;
     }
 

@@ -1,0 +1,431 @@
+{
+  "sections": [
+    {
+      "id": "sec_1f54zkdyd",
+      "order": 0,
+      "title": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "a simple title",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "textFormat": 0
+            }
+          ],
+          "direction": "ltr",
+          "textStyle": "",
+          "textFormat": 0
+        }
+      },
+      "content": [
+        {
+          "id": "block-1776447027005",
+          "type": "lexicalRichTextBlock",
+          "content": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "This is 1st line",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "This is 2nd line after some space",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": "ltr"
+            }
+          }
+        },
+        {
+          "id": "block-1776447042918",
+          "type": "lexicalRichTextBlock",
+          "content": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Left align (default)",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "center",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "center",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "right",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "right",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": "ltr"
+            }
+          }
+        },
+        {
+          "id": "block-1776447070233",
+          "type": "lexicalRichTextBlock",
+          "content": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "This is text",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr",
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "image",
+                      "width": 400,
+                      "height": 175,
+                      "altText": "image",
+                      "mediaId": "undefined",
+                      "version": 1,
+                      "imageUrl": "https://d2s3hzpxwvdgy4.cloudfront.net/images/IN_IC_G6_M_C14_L3-10001.webp",
+                      "displayMode": "inline"
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "center",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "image",
+                      "width": 400,
+                      "height": 175,
+                      "altText": "image",
+                      "mediaId": "undefined",
+                      "version": 1,
+                      "imageUrl": "https://d2s3hzpxwvdgy4.cloudfront.net/images/IN_IC_G6_M_C14_L3-10001.webp",
+                      "displayMode": "inline"
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "right",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "image",
+                      "width": 400,
+                      "height": 175,
+                      "altText": "image",
+                      "mediaId": "undefined",
+                      "version": 1,
+                      "imageUrl": "https://d2s3hzpxwvdgy4.cloudfront.net/images/IN_IC_G6_M_C14_L3-10001.webp",
+                      "displayMode": "inline"
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": "ltr"
+            }
+          }
+        },
+        {
+          "id": "block-1776447118533",
+          "type": "lexicalRichTextBlock",
+          "content": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "columns",
+                  "format": "",
+                  "indent": 0,
+                  "columns": 2,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "column",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [
+                            {
+                              "mode": "normal",
+                              "text": "Abc",
+                              "type": "text",
+                              "style": "",
+                              "detail": 0,
+                              "format": 0,
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "textStyle": "",
+                          "textFormat": 0
+                        },
+                        {
+                          "type": "paragraph",
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [],
+                          "direction": null,
+                          "textStyle": "",
+                          "textFormat": 0
+                        },
+                        {
+                          "type": "paragraph",
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [],
+                          "direction": null,
+                          "textStyle": "",
+                          "textFormat": 0
+                        },
+                        {
+                          "type": "paragraph",
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [],
+                          "direction": null,
+                          "textStyle": "",
+                          "textFormat": 0
+                        },
+                        {
+                          "type": "paragraph",
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [],
+                          "direction": null,
+                          "textStyle": "",
+                          "textFormat": 0
+                        },
+                        {
+                          "type": "paragraph",
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [
+                            {
+                              "mode": "normal",
+                              "text": "abc",
+                              "type": "text",
+                              "style": "",
+                              "detail": 0,
+                              "format": 0,
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "textStyle": "",
+                          "textFormat": 0
+                        }
+                      ],
+                      "direction": "ltr",
+                      "columnIndex": 0,
+                      "verticalAlign": "top"
+                    },
+                    {
+                      "type": "column",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [
+                            {
+                              "mode": "normal",
+                              "text": "vertical center",
+                              "type": "text",
+                              "style": "",
+                              "detail": 0,
+                              "format": 0,
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "textStyle": "",
+                          "textFormat": 0
+                        }
+                      ],
+                      "direction": "ltr",
+                      "columnIndex": 1,
+                      "verticalAlign": "center"
+                    }
+                  ],
+                  "direction": "ltr",
+                  "columnWidths": [
+                    "300px",
+                    "200px"
+                  ]
+                }
+              ],
+              "direction": "ltr"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

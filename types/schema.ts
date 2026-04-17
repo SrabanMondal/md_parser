@@ -69,7 +69,8 @@ export interface LexicalHeading {
 export interface LexicalImage {
     type: 'image';
     version: 1;
-    src: string;
+    src?: string;
+    imageUrl?: string; // Added for clarity based on user request
     altText: string;
     width?: number;
     height?: number;

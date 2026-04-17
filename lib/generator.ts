@@ -69,9 +69,9 @@ export class MarkdownGenerator {
 
     private extractTitleText(root: LexicalRoot): string {
         if (!root.children || root.children.length === 0) return '';
-        const heading = root.children[0] as LexicalHeading;
-        if (!heading.children) return '';
-        return heading.children.map(c => this.generateInlineNode(c)).join('');
+        const firstChild = root.children[0] as any;
+        if (!firstChild.children) return '';
+        return firstChild.children.map((c: any) => this.generateInlineNode(c)).join('');
     }
 
     // ═══════════════════════════════════════════════════════════
@@ -555,10 +555,20 @@ export class MarkdownGenerator {
 
     /**
      * Paragraph: concatenate all children as inline content.
+     * Empty paragraphs emit `<!-- empty -->` sentinel to preserve blank lines.
+     * Non-default alignment emits `{.align-X}` suffix.
      */
     private generateParagraph(node: LexicalParagraph): string {
-        if (!node.children || node.children.length === 0) return '';
-        return node.children.map(c => this.generateInlineNode(c)).join('');
+        const format = (node as any).format || '';
+        const align = (format && format !== '' && format !== 'left') ? format : '';
+
+        if (!node.children || node.children.length === 0) {
+            // Preserve empty paragraphs
+            return align ? `<!-- empty -->{.align-${align}}` : '<!-- empty -->';
+        }
+
+        const content = node.children.map(c => this.generateInlineNode(c)).join('');
+        return align ? `${content}{.align-${align}}` : content;
     }
 
     /**
@@ -640,6 +650,11 @@ export class MarkdownGenerator {
     private generateImage(node: any): string {
         const alt = node.altText || '';
         const src = node.imageUrl || node.src || '';
+        const w = node.width;
+        const h = node.height;
+        if (w && h) {
+            return `![${alt}](${src}){${w}x${h}}`;
+        }
         return `![${alt}](${src})`;
     }
 
@@ -761,16 +776,30 @@ export class MarkdownGenerator {
     private generateColumns(node: LexicalColumns): string {
         const widths = node.columnWidths.map(w => {
             if (w.endsWith('fr')) return w;
+            if (w.endsWith('px')) return w; // preserve px units
             if (w.endsWith('%')) return w.slice(0, -1);
             return w;
         });
         const template = widths.join(', ');
 
-        const columnContents = node.children.map(col =>
-            this.generateBlockNodes(col.children).trim()
-        );
+        const columns = (node.children || []) as any[];
+        const parts: string[] = [];
+        parts.push(`::: columns [${template}]`);
 
-        return `::: columns [${template}]\n${columnContents.join('\n=== COL\n')}\n:::`;
+        columns.forEach((col, i) => {
+            if (i > 0) {
+                const vAlign = col.verticalAlign || 'top';
+                if (vAlign !== 'top') {
+                    parts.push(`=== COL valign=${vAlign}`);
+                } else {
+                    parts.push('=== COL');
+                }
+            }
+            parts.push(this.generateBlockNodes(col.children).trim());
+        });
+
+        parts.push(':::');
+        return parts.join('\n');
     }
 
     /**

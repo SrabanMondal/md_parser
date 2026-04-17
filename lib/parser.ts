@@ -311,8 +311,15 @@ export class MarkdownParser {
                     }
                     continue;
                 }
-                if (trimmedLine === '=== COL' && state === 'IN_COLUMN_CONTAINER') {
-                    if (currentColumnContainer) currentColumnIndex++;
+                if (trimmedLine.startsWith('=== COL') && state === 'IN_COLUMN_CONTAINER') {
+                    if (currentColumnContainer) {
+                        currentColumnIndex++;
+                        // Parse optional valign attribute: === COL valign=center
+                        const valignMatch = trimmedLine.match(/valign=(\w+)/);
+                        if (valignMatch && currentColumnContainer.children[currentColumnIndex]) {
+                            currentColumnContainer.children[currentColumnIndex].verticalAlign = valignMatch[1];
+                        }
+                    }
                     continue;
                 }
                 if (trimmedLine.startsWith('::: columns')) {
@@ -325,7 +332,7 @@ export class MarkdownParser {
                         type: 'columns',
                         version: 1,
                         columns: widths.length,
-                        columnWidths: widths.map(w => w.endsWith('fr') ? w : `${w}%`),
+                        columnWidths: widths.map(w => (w.endsWith('fr') || w.endsWith('px')) ? w : `${w}%`),
                         children: widths.map((_, index) => ({
                             type: 'column',
                             version: 1,
@@ -367,8 +374,20 @@ export class MarkdownParser {
                     const text = textParts.join(' ');
                     const tag = `h${level.length}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
                     targetChildren.push(this.createHeading(text, tag));
+                } else if (trimmedLine === '<!-- empty -->' || trimmedLine.startsWith('<!-- empty -->')) {
+                    // Empty paragraph sentinel, possibly with alignment
+                    const alignMatch = trimmedLine.match(/\{\.align-(\w+)\}/);
+                    const para: any = { type: 'paragraph', version: 1, children: [] };
+                    if (alignMatch) para.format = alignMatch[1];
+                    targetChildren.push(para);
                 } else {
-                    targetChildren.push({ type: 'paragraph', version: 1, children: this.parseInlineText(trimmedLine) });
+                    // Parse alignment suffix {.align-X} if present
+                    const alignMatch = trimmedLine.match(/^(.+?)\{\.align-(\w+)\}$/);
+                    if (alignMatch) {
+                        targetChildren.push({ type: 'paragraph', version: 1, format: alignMatch[2], children: this.parseInlineText(alignMatch[1]) });
+                    } else {
+                        targetChildren.push({ type: 'paragraph', version: 1, children: this.parseInlineText(trimmedLine) });
+                    }
                 }
             }
 
@@ -1121,12 +1140,12 @@ export class MarkdownParser {
         const nodes: LexicalNode[] = [];
         // Extended regex: adds <span ...>text</span> pattern for styled text / highlight nodes.
         // Groups: 1=bold, 2=italic, 3=image(full), 4=alt, 5=src, 6=equation, 7=span(full), 8=spanAttrs, 9=spanText
-        const regex = /(\*\*.*?\*\*)|(\*.*?\*)|(!\[(.*?)\]\((.*?)\))|(\$[^$]*?\$)|(<span\s([^>]*)>(.*?)<\/span>)/g;
+        const regex = /(\*\*.*?\*\*)|(\*.*?\*)|(!\[(.*?)\]\((.*?)\)(?:\{(\d+)x(\d+)\})?)|(\$[^$]*?\$)|(<span\s([^>]*)>(.*?)<\/span>)/g;
         let lastIndex = 0;
         let match;
 
         while ((match = regex.exec(text)) !== null) {
-            const [fullMatch, bold, italic, image, alt, src, equation, spanFull, spanAttrs, spanText] = match;
+            const [fullMatch, bold, italic, image, alt, src, imgW, imgH, equation, spanFull, spanAttrs, spanText] = match;
             const leadText = text.substring(lastIndex, match.index);
             if (leadText) {
                 nodes.push({ type: 'text', version: 1, text: leadText });
@@ -1145,18 +1164,18 @@ export class MarkdownParser {
                         imageUrl: src || '', 
                         altText: alt || '',
                         mediaId: '',
-                        width: 400,
-                        height: 175,
+                        width: imgW ? parseInt(imgW) : 400,
+                        height: imgH ? parseInt(imgH) : 175,
                         displayMode: 'inline'
                     } as any);
                 } else {
                     nodes.push({ 
                         type: 'image', 
                         version: 1, 
-                        src: src || '', 
+                        imageUrl: src || '',
                         altText: alt || '',
-                        width: 400,
-                        height: 175
+                        width: imgW ? parseInt(imgW) : 400,
+                        height: imgH ? parseInt(imgH) : 175
                     });
                 }
             } else if (equation) {
@@ -1490,8 +1509,14 @@ export class MarkdownParser {
                 continue;
             }
 
-            if (trimmedLine === '=== COL' && state === 'IN_COLUMN_CONTAINER') {
-                if (currentColumnContainer) currentColumnIndex++;
+            if (trimmedLine.startsWith('=== COL') && state === 'IN_COLUMN_CONTAINER') {
+                if (currentColumnContainer) {
+                    currentColumnIndex++;
+                    const valignMatch = trimmedLine.match(/valign=(\w+)/);
+                    if (valignMatch && currentColumnContainer.children[currentColumnIndex]) {
+                        currentColumnContainer.children[currentColumnIndex].verticalAlign = valignMatch[1];
+                    }
+                }
                 continue;
             }
 
@@ -1504,7 +1529,7 @@ export class MarkdownParser {
                     type: 'columns' as const,
                     version: 1 as const,
                     columns: widths.length,
-                    columnWidths: widths.map(w => w.endsWith('fr') ? w : `${w}%`),
+                    columnWidths: widths.map(w => (w.endsWith('fr') || w.endsWith('px')) ? w : `${w}%`),
                     children: widths.map((_, index) => ({
                         type: 'column' as const,
                         version: 1 as const,

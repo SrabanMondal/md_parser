@@ -2,13 +2,23 @@ export interface LexicalBaseNode {
 type: string;
 version: number;
 }
-export interface TextNode extends LexicalBaseNode {
-type: "text"|"highlight";
-text: string;
-format?: number;
-detail?: number;
-mode?: "normal" | "token" | "segmented";
-style?: string;
+
+interface LexicalTextBase extends LexicalBaseNode {
+  version: 1;
+  text: string;
+  detail?: number;
+  format?: number;
+  mode?: 'normal' | 'token' | 'segmented';
+  style?: string;
+}
+
+export interface TextNode extends LexicalTextBase {
+type: "text"
+}
+
+export interface HighlightNode extends LexicalTextBase {
+  type: 'highlight';
+  className: string;
 }
 export interface LineBreakNode extends LexicalBaseNode {
 type: "linebreak";
@@ -32,10 +42,6 @@ width: number;
 height: number;
 displayMode: "inline" | "block";
 }
-export interface HighlightNode extends TextNode {
-type: "highlight";
-className: string | null;
-}
 export interface FitgNode extends LexicalBaseNode {
 type: 'fitg',
 answer: string,
@@ -50,7 +56,7 @@ inline: boolean,
 export interface ElementNodeBase extends LexicalBaseNode {
 children: LexicalNode[];
 direction: "ltr" | "rtl" | null;
-format: number|string;
+format: "left" | "center" | "right" | "justify" | null;
 indent: number;
 textStyle?:string;
 textFormat?: number;

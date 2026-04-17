@@ -639,7 +639,7 @@
                             {
                               "type": "image",
                               "version": 1,
-                              "src": "",
+                              "imageUrl": "",
                               "altText": "US G3 S U2 L2 L1 image 006",
                               "width": 400,
                               "height": 175
@@ -812,7 +812,7 @@
                             {
                               "type": "image",
                               "version": 1,
-                              "src": "",
+                              "imageUrl": "",
                               "altText": "US G3 S U2 L2 L1 image 006",
                               "width": 400,
                               "height": 175

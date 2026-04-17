@@ -45,6 +45,11 @@ const fixtures: Fixture[] = [
         md: '', // JSON-only fixture — no source .md file
         json: JSON.parse(fs.readFileSync(path.join(testDir, 'test3.json'), 'utf-8')),
     },
+    {
+        name: 'test4',
+        md: '', // JSON-only fixture — no source .md file
+        json: JSON.parse(fs.readFileSync(path.join(testDir, 'test4.json'), 'utf-8')),
+    },
 ];
 
 // ═══════════════════════════════════════════════════════════
@@ -216,25 +221,39 @@ function removeContainerDecorativeProps(obj: any): any {
     if (Array.isArray(obj)) return obj.map(removeContainerDecorativeProps);
     if (obj !== null && typeof obj === 'object') {
         const result: any = {};
-        const skipKeys = new Set([
+        const nodeType = obj.type;
+
+        // Keys always skipped regardless of node type
+        const alwaysSkip = new Set([
             'direction', 'textStyle', 'textFormat',
-            'columns', 'columnIndex', 'verticalAlign',
+            'columns', 'columnIndex',
             'colWidths', 'colSpan', 'rowSpan',
-            'width', 'height',
             'tag', 'start', 'backgroundColor',
-            'displayMode', 'mode', 'detail',
+            'mode', 'detail',
             'grid', 'mediaId',
-            'headerState',
+            'headerState', 'order', 'title',
         ]);
+
         for (const [key, value] of Object.entries(obj)) {
             // Skip format when it's empty string (container-level) or 0 (default on inline nodes)
             if (key === 'format' && (value === '' || value === 0)) continue;
             // Skip indent when 0
             if (key === 'indent' && value === 0) continue;
             // Skip empty string src/style (parser defaults)
-            if ((key === 'src' || key === 'style') && value === '') continue;
-            // Skip the container-decorative keys
-            if (skipKeys.has(key)) continue;
+            if ((key === 'src' || key === 'style' || key === 'imageUrl') && value === '') continue;
+            // Always-skip keys
+            if (alwaysSkip.has(key)) continue;
+            // width/height: keep on images, skip on everything else (table cells, rows)
+            if ((key === 'width' || key === 'height') && nodeType !== 'image') continue;
+            // displayMode: parser only produces it in MCQ context, skip everywhere
+            if (key === 'displayMode') continue;
+            // verticalAlign: keep on column nodes, skip elsewhere
+            if (key === 'verticalAlign' && nodeType !== 'column') continue;
+            // Normalize src → imageUrl on image nodes
+            if (key === 'src' && nodeType === 'image') {
+                result['imageUrl'] = removeContainerDecorativeProps(value);
+                continue;
+            }
             result[key] = removeContainerDecorativeProps(value);
         }
         return result;
@@ -242,9 +261,30 @@ function removeContainerDecorativeProps(obj: any): any {
     return obj;
 }
 
+/**
+ * Normalize section title children: heading and paragraph are interchangeable
+ * as container types in title roots. Convert heading → paragraph for comparison.
+ */
+function normalizeTitleNodes(json: any): any {
+    if (!json || !json.sections) return json;
+    const result = JSON.parse(JSON.stringify(json));
+    for (const section of result.sections) {
+        if (section.title?.root?.children) {
+            section.title.root.children = section.title.root.children.map((child: any) => {
+                if (child.type === 'heading') {
+                    const { tag, ...rest } = child;
+                    return { ...rest, type: 'paragraph' };
+                }
+                return child;
+            });
+        }
+    }
+    return result;
+}
+
 /** Apply all normalization steps to a JSON structure. */
 function normalize(json: any): any {
-    return mergeAdjacentTextNodes(removeContainerDecorativeProps(removeOptionalProps(normalizeHeaderState(normalizeIds(json)))));
+    return mergeAdjacentTextNodes(removeContainerDecorativeProps(removeOptionalProps(normalizeHeaderState(normalizeTitleNodes(normalizeIds(json))))));
 }
 
 /**

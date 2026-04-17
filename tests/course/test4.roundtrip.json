@@ -1,0 +1,278 @@
+{
+  "sections": [
+    {
+      "id": "sec_1f54zkdyd",
+      "title": {
+        "root": {
+          "type": "root",
+          "version": 1,
+          "children": [
+            {
+              "type": "heading",
+              "tag": "h3",
+              "version": 1,
+              "children": [
+                {
+                  "type": "text",
+                  "version": 1,
+                  "text": "a simple title"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "content": [
+        {
+          "id": "block-1776447027005",
+          "type": "lexicalRichTextBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "This is 1st line"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": []
+                },
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "This is 2nd line after some space"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "block-1776447042918",
+          "type": "lexicalRichTextBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "Left align (default)"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "format": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "center"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "format": "right",
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "right"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "block-1776447070233",
+          "type": "lexicalRichTextBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "text",
+                      "version": 1,
+                      "text": "This is text"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "image",
+                      "version": 1,
+                      "imageUrl": "https://d2s3hzpxwvdgy4.cloudfront.net/images/IN_IC_G6_M_C14_L3-10001.webp",
+                      "altText": "image",
+                      "width": 400,
+                      "height": 175
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "format": "center",
+                  "children": [
+                    {
+                      "type": "image",
+                      "version": 1,
+                      "imageUrl": "https://d2s3hzpxwvdgy4.cloudfront.net/images/IN_IC_G6_M_C14_L3-10001.webp",
+                      "altText": "image",
+                      "width": 400,
+                      "height": 175
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "version": 1,
+                  "format": "right",
+                  "children": [
+                    {
+                      "type": "image",
+                      "version": 1,
+                      "imageUrl": "https://d2s3hzpxwvdgy4.cloudfront.net/images/IN_IC_G6_M_C14_L3-10001.webp",
+                      "altText": "image",
+                      "width": 400,
+                      "height": 175
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "block-1776447118533",
+          "type": "lexicalRichTextBlock",
+          "title": "Untitled Block",
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": [
+                {
+                  "type": "columns",
+                  "version": 1,
+                  "columns": 2,
+                  "columnWidths": [
+                    "300px",
+                    "200px"
+                  ],
+                  "children": [
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "Abc"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": []
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": []
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": []
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": []
+                        },
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "abc"
+                            }
+                          ]
+                        }
+                      ],
+                      "columnIndex": 0,
+                      "verticalAlign": "top"
+                    },
+                    {
+                      "type": "column",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "version": 1,
+                          "children": [
+                            {
+                              "type": "text",
+                              "version": 1,
+                              "text": "vertical center"
+                            }
+                          ]
+                        }
+                      ],
+                      "columnIndex": 1,
+                      "verticalAlign": "center"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
