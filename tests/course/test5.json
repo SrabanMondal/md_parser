@@ -1,0 +1,622 @@
+{
+  "sections": [
+    {
+      "id": "s1",
+      "title": {
+        "root": {
+          "type": "root",
+          "version": 1,
+          "children": [
+            {
+              "tag": "h3",
+              "type": "heading",
+              "version": 1,
+              "children": [
+                {
+                  "text": "2.Completing Grouped Expressions",
+                  "type": "text",
+                  "version": 1
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "content": [
+        {
+          "id": "IN_IC_G6_M_C20_L3_block_006",
+          "type": "slideShowBlock",
+          "title": "Untitled Block",
+          "slides": [
+            {
+              "id": "slide-1776450336703-0",
+              "content": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "version": 1,
+                      "children": [
+                        {
+                          "text": "Step 1: Identify the Anchor",
+                          "type": "text",
+                          "style": "color: #2b70c9;",
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "textStyle": "color: #2b70c9;",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "version": 1,
+                      "children": [
+                        {
+                          "text": "We want to write: ",
+                          "type": "text",
+                          "version": 1
+                        },
+                        {
+                          "type": "equation",
+                          "inline": true,
+                          "version": 1,
+                          "equation": "4a - (\\dots)"
+                        },
+                        {
+                          "text": ".",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "version": 1,
+                      "children": [
+                        {
+                          "text": "The term ",
+                          "type": "text",
+                          "version": 1
+                        },
+                        {
+                          "type": "equation",
+                          "inline": true,
+                          "version": 1,
+                          "equation": "4a"
+                        },
+                        {
+                          "text": " is our Anchor. It stays outside. The Leftovers waiting to go inside are ",
+                          "type": "text",
+                          "version": 1
+                        },
+                        {
+                          "type": "equation",
+                          "inline": true,
+                          "version": 1,
+                          "equation": "-c"
+                        },
+                        {
+                          "text": " and ",
+                          "type": "text",
+                          "version": 1
+                        },
+                        {
+                          "type": "equation",
+                          "inline": true,
+                          "version": 1,
+                          "equation": "+b"
+                        },
+                        {
+                          "text": ".",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "version": 1,
+                      "children": [],
+                      "direction": null,
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "image",
+                          "width": 782,
+                          "height": 49,
+                          "altText": "image",
+                          "version": 1,
+                          "imageUrl": "https://d2s3hzpxwvdgy4.cloudfront.net/images/IN_IC_G6_M_C20_L3-10003.webp",
+                          "displayMode": "inline"
+                        }
+                      ],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [],
+                      "direction": null,
+                      "textStyle": "",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "last line",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "textStyle": "",
+                      "textFormat": 0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "slide-1776450336703-1",
+              "content": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "version": 1,
+                      "children": [
+                        {
+                          "text": "Step 2: Check the Trigger",
+                          "type": "text",
+                          "style": "color: #2b70c9;",
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "textStyle": "color: #2b70c9;",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "version": 1,
+                      "children": [
+                        {
+                          "text": "Look at the sign before the bracket. It is a Minus (",
+                          "type": "text",
+                          "version": 1
+                        },
+                        {
+                          "type": "equation",
+                          "inline": true,
+                          "version": 1,
+                          "equation": "-"
+                        },
+                        {
+                          "text": "). This is a Flip Trigger! It tells you that every term entering the bracket must change its sign.",
+                          "type": "text",
+                          "version": 1
+                        }
+                      ],
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "version": 1,
+                      "children": [],
+                      "direction": "ltr",
+                      "textFormat": 0
+                    },
+                    {
+                      "tag": "ul",
+                      "type": "list",
+                      "start": 1,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "type": "listitem",
+                          "value": 1,
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [
+                            {
+                              "mode": "normal",
+                              "text": "a",
+                              "type": "text",
+                              "style": "color: #2b70c9;",
+                              "detail": 0,
+                              "format": 0,
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "textStyle": "color: #2b70c9;"
+                        },
+                        {
+                          "type": "listitem",
+                          "value": 2,
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [
+                            {
+                              "mode": "normal",
+                              "text": "b",
+                              "type": "highlight",
+                              "style": " background-color: #FF9600;",
+                              "detail": 0,
+                              "format": 0,
+                              "version": 1,
+                              "className": "round-highlight"
+                            }
+                          ],
+                          "direction": "ltr",
+                          "textStyle": " background-color: #FF9600;"
+                        },
+                        {
+                          "type": "listitem",
+                          "value": 3,
+                          "format": "",
+                          "indent": 0,
+                          "version": 1,
+                          "children": [
+                            {
+                              "mode": "normal",
+                              "text": "c",
+                              "type": "text",
+                              "detail": 0,
+                              "format": 1,
+                              "version": 1
+                            }
+                          ],
+                          "direction": "ltr",
+                          "textFormat": 1
+                        }
+                      ],
+                      "listType": "bullet",
+                      "direction": "ltr",
+                      "textFormat": 1
+                    }
+                  ],
+                  "textFormat": 1
+                }
+              }
+            },
+            {
+              "id": "slide-1776450336703-2",
+              "content": {
+                "root": {
+                  "type": "root",
+                  "format": "",
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "this is ",
+                          "type": "text",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": "bold ",
+                          "type": "text",
+                          "detail": 0,
+                          "format": 1,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": "italic ",
+                          "type": "text",
+                          "detail": 0,
+                          "format": 2,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": "underline",
+                          "type": "text",
+                          "detail": 0,
+                          "format": 10,
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "blue",
+                          "type": "text",
+                          "style": "color: #2b70c9;",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "textStyle": "color: #2b70c9;",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [],
+                      "direction": null,
+                      "textStyle": "color: #2b70c9;",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "center",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "green",
+                          "type": "highlight",
+                          "style": "color: #4b4b4b; background-color: #58CC02;",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1,
+                          "className": "round-highlight"
+                        }
+                      ],
+                      "direction": "ltr",
+                      "textStyle": "color: #4b4b4b; background-color: #58CC02;",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "center",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [],
+                      "direction": null,
+                      "textStyle": "color: #4b4b4b; background-color: #58CC02;",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "right",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "orange",
+                          "type": "text",
+                          "style": "color: #4b4b4b;background-color: #FF9600;padding: 0 3px;",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "textStyle": "color: #4b4b4b;background-color: #FF9600;padding: 0 3px;",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "center",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [],
+                      "direction": null,
+                      "textStyle": "color: #4b4b4b;  ",
+                      "textFormat": 0
+                    },
+                    {
+                      "type": "paragraph",
+                      "format": "left",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "last line",
+                          "type": "text",
+                          "style": "color: #4b4b4b;  ",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": "ltr",
+                      "textStyle": "color: #4b4b4b;  ",
+                      "textFormat": 0
+                    }
+                  ],
+                  "direction": "ltr",
+                  "textStyle": "color: #4b4b4b;background-color: #FF9600;padding: 0 3px;"
+                }
+              }
+            }
+          ],
+          "content": {
+            "root": {
+              "type": "root",
+              "version": 1,
+              "children": []
+            }
+          },
+          "description": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "version": 1,
+                  "children": [
+                    {
+                      "text": "Watch how we ",
+                      "type": "text",
+                      "version": 1
+                    },
+                    {
+                      "mode": "normal",
+                      "text": "move",
+                      "type": "text",
+                      "format": 1,
+                      "version": 1
+                    },
+                    {
+                      "mode": "normal",
+                      "text": " ",
+                      "type": "text",
+                      "version": 1
+                    },
+                    {
+                      "mode": "normal",
+                      "text": "terms",
+                      "type": "text",
+                      "format": 2,
+                      "version": 1
+                    },
+                    {
+                      "mode": "normal",
+                      "text": " ",
+                      "type": "text",
+                      "version": 1
+                    },
+                    {
+                      "mode": "normal",
+                      "text": "into",
+                      "type": "text",
+                      "format": 2,
+                      "version": 1
+                    },
+                    {
+                      "mode": "normal",
+                      "text": " a ",
+                      "type": "text",
+                      "version": 1
+                    },
+                    {
+                      "mode": "normal",
+                      "text": "negative",
+                      "type": "highlight",
+                      "style": " background-color: #FF4B4B;",
+                      "detail": 0,
+                      "version": 1,
+                      "className": "round-highlight"
+                    },
+                    {
+                      "mode": "normal",
+                      "text": " bracket for the ",
+                      "type": "text",
+                      "version": 1
+                    },
+                    {
+                      "mode": "normal",
+                      "text": "expression",
+                      "type": "text",
+                      "style": "color: #58cc02;",
+                      "version": 1
+                    },
+                    {
+                      "mode": "normal",
+                      "text": " ",
+                      "type": "text",
+                      "version": 1
+                    },
+                    {
+                      "type": "equation",
+                      "inline": true,
+                      "version": 1,
+                      "equation": "4a - c + b"
+                    },
+                    {
+                      "text": ".",
+                      "type": "text",
+                      "version": 1
+                    }
+                  ],
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "center",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "center",
+                      "type": "text",
+                      "detail": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": "ltr"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

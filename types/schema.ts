@@ -91,6 +91,7 @@ export interface LexicalColumnContainer {
     type: 'column-container';
     version: 1;
     columns: LexicalColumn[];
+    children?: LexicalNode[];
     template: string;
 }
 

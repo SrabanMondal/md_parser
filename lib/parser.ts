@@ -22,6 +22,7 @@ import {
     LexicalFitg,
     LexicalLineBreak,
 } from '../types/schema';
+import { ColumnsNode } from '@/types/lexical';
 
 type ParserState = 'NORMAL' | 'IN_SECTION' | 'IN_BLOCK' | 'IN_SLIDESHOW' | 'IN_SLIDE' | 'IN_DESCRIPTION' | 'IN_MCQ' | 'IN_QUESTION' | 'IN_OPTIONS' | 'IN_OPTION' | 'IN_FEEDBACK' | 'IN_GENERAL_FEEDBACK' | 'IN_MAMCQ' | 'IN_MAMCQ_QUESTION' | 'IN_MAMCQ_OPTIONS' | 'IN_MAMCQ_OPTION' | 'IN_MAMCQ_FEEDBACK_POSITIVE' | 'IN_MAMCQ_FEEDBACK_NEGATIVE' | 'IN_DRAG_DROP' | 'IN_INSTRUCTIONS' | 'IN_ITEMS' | 'IN_ZONES' | 'IN_ZONE' | 'IN_DRAG_ITEM' | 'IN_DROP_ZONE' | 'IN_CORRECT_ITEMS' | 'IN_FEEDBACK_CORRECT' | 'IN_FEEDBACK_INCORRECT' | 'IN_FIB' | 'IN_FIB_QUESTION' | 'IN_FIB_FEEDBACK_CORRECT' | 'IN_FIB_FEEDBACK_INCORRECT' | 'ROOT' | 'IN_LATEX' | 'IN_COLUMN_CONTAINER';
 
@@ -37,7 +38,7 @@ export class MarkdownParser {
         const sections: Section[] = [];
         let currentSection: Section | null = null;
         let currentBlock: ContentBlock | null = null;
-        let currentColumnContainer: LexicalColumnContainer | null = null;
+        let currentColumnContainer: any = null;
         let currentColumnIndex = -1;
         let state: ParserState = 'ROOT';
         let multiLineContent: string[] = [];
@@ -397,11 +398,8 @@ export class MarkdownParser {
                         // Parse description content
                         const descriptionText = currentDescriptionContent.join('\n');
                         if (descriptionText.trim()) {
-                            currentBlock.description.root.children = [{ 
-                                type: 'paragraph', 
-                                version: 1, 
-                                children: this.parseInlineText(descriptionText) 
-                            }];
+                            currentBlock.description.root.children = [];
+                            this.parseSlideContent(descriptionText, currentBlock.description.root.children);
                         }
                         currentDescriptionContent = [];
                         state = 'IN_SLIDESHOW';
@@ -1575,8 +1573,23 @@ export class MarkdownParser {
                 const text = textParts.join(' ');
                 const tag = `h${level.length}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
                 targetChildren.push(this.createHeading(text, tag));
+            } else if (trimmedLine === '<!-- empty -->' || trimmedLine.startsWith('<!-- empty -->')) {
+                const alignMatch = trimmedLine.match(/\{\.align-(\w+)\}/);
+                const para: any = { type: 'paragraph', version: 1, children: [] };
+                if (alignMatch) para.format = alignMatch[1];
+                targetChildren.push(para);
             } else {
-                targetChildren.push({ type: 'paragraph', version: 1, children: this.parseInlineText(trimmedLine, isMCQBlock) });
+                const alignMatch = trimmedLine.match(/^(.+?)\{\.align-(\w+)\}$/);
+                if (alignMatch) {
+                    targetChildren.push({
+                        type: 'paragraph',
+                        version: 1,
+                        format: alignMatch[2],
+                        children: this.parseInlineText(alignMatch[1], isMCQBlock)
+                    } as any);
+                } else {
+                    targetChildren.push({ type: 'paragraph', version: 1, children: this.parseInlineText(trimmedLine, isMCQBlock) });
+                }
             }
         }
     }

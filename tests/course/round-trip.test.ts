@@ -50,6 +50,11 @@ const fixtures: Fixture[] = [
         md: '', // JSON-only fixture — no source .md file
         json: JSON.parse(fs.readFileSync(path.join(testDir, 'test4.json'), 'utf-8')),
     },
+    {
+        name: 'test5',
+        md: '', // JSON-only fixture — no source .md file
+        json: JSON.parse(fs.readFileSync(path.join(testDir, 'test5.json'), 'utf-8')),
+    },
 ];
 
 // ═══════════════════════════════════════════════════════════
@@ -235,8 +240,8 @@ function removeContainerDecorativeProps(obj: any): any {
         ]);
 
         for (const [key, value] of Object.entries(obj)) {
-            // Skip format when it's empty string (container-level) or 0 (default on inline nodes)
-            if (key === 'format' && (value === '' || value === 0)) continue;
+            // Skip default format values (empty, 0, and explicit left alignment)
+            if (key === 'format' && (value === '' || value === 0 || value === 'left')) continue;
             // Skip indent when 0
             if (key === 'indent' && value === 0) continue;
             // Skip empty string src/style (parser defaults)
